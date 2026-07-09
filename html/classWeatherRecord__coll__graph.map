@@ -1,0 +1,5 @@
+<map id="WeatherRecord" name="WeatherRecord">
+<area shape="rect" id="node1" title="Class to hold a single weather record." alt="" coords="13,95,125,121"/>
+<area shape="rect" id="node2" href="$classTime.html" title="Time class to store time information in a modular form." alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node3" href="$classDate.html" title="Date class to store date information in a modular form." alt="" coords="85,5,134,32"/>
+</map>

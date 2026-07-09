@@ -1,0 +1,8 @@
+<map id="Controller" name="Controller">
+<area shape="rect" id="node1" title="Controller for the application." alt="" coords="45,273,123,300"/>
+<area shape="rect" id="node2" href="$classView.html" title="View for the application." alt="" coords="5,184,56,211"/>
+<area shape="rect" id="node3" href="$classVector.html" title=" " alt="" coords="81,184,255,211"/>
+<area shape="rect" id="node4" href="$classWeatherRecord.html" title="Class to hold a single weather record." alt="" coords="112,95,224,121"/>
+<area shape="rect" id="node5" href="$classTime.html" title="Time class to store time information in a modular form." alt="" coords="104,5,155,32"/>
+<area shape="rect" id="node6" href="$classDate.html" title="Date class to store date information in a modular form." alt="" coords="183,5,233,32"/>
+</map>
