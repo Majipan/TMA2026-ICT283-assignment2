@@ -55,6 +55,7 @@ void Controller::Run(istream& input, ostream& output)
 // Loading of the data_source file
 bool Controller::LoadSources()
 {
+    // Load the data source file
     ifstream infile("data/data_source.txt");
 
     if(!infile)
@@ -62,6 +63,7 @@ bool Controller::LoadSources()
         return false;
     }
 
+    // Load the individual data files from data source
     string source;
     bool loadedAtLeastOneFile = false;
 
