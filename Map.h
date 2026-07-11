@@ -2,6 +2,7 @@
 #define MAP_H_INCLUDED
 
 using namespace std;
+#include <iostream>
 
 
 // ----------------------------------------------
@@ -26,7 +27,7 @@ using namespace std;
     Map();
 
     /**
-     * @brief   Constructor overload to pre-define Map size
+     * @brief   Parameterised Constructor to pre-define Map size
      * @param   n - initial Size of the Map
      */
     Map(int n);
@@ -38,7 +39,7 @@ using namespace std;
 
     /**
      * @brief   Copy Constructor
-     * @param   other - the other map to copy this one
+     * @param   other - the other map for this to copy
      */
     Map(const Map& other);
 
@@ -120,10 +121,9 @@ using namespace std;
     int SearchIndex(const K& key) const;
 
     /**
-     * @brief   Expands the internal dynamic array when the Map is full
-     * @return  true if resizing succeeds, false otherwise
+     * @brief   Helper that expands the internal dynamic array when the Map is full
      */
-    bool Resize();
+    void Resize();
 
     /**
      * @brief   Performs a deep copy from another Map
@@ -138,4 +138,227 @@ using namespace std;
  };
 
 
+ // ----------------------------------------------
+ // Constructor
+template <class K, class V>
+Map<K, V>::Map()
+{
+    m_size = 0;
+    m_capacity = 10;
+    m_entries = new Entry[m_capacity];  // request for memory on the heap
+    if (m_entries == nullptr)           // fail to allocate memory
+    {
+        m_capacity = 0;
+    }
+}
+
+// Constructor overload
+template <class K, class V>
+Map<K, V>::Map(int n)
+{
+    m_size = n;
+    m_capacity = n * 2;
+    m_entries = new Entry[m_capacity];  // request for memory on the heap
+    if (m_entries == nullptr)            // fail to allocate memory
+    {
+        m_capacity = 0;
+    }
+}
+
+// Destructor
+template <class K, class V>
+Map<K, V>::~Map()
+{
+    if (m_entries != nullptr)
+    {
+        DeleteData();
+    }
+}
+
+// ----------------------------------------------
+// Copy-constructor
+template <class K, class V>
+Map<K, V>::Map(const Map<K, V>& other)
+{
+    m_entries = 0;
+    m_size = 0;
+    m_capacity = 0;
+
+    CopyFrom(other);
+}
+
+// Helper for copy constructor
+template <class K, class V>
+void Map<K, V>::CopyFrom(const Map<K, V>& other)
+{
+    m_capacity = other.m_capacity;
+    m_size = other.m_size;
+
+    if(m_capacity > 0)
+    {
+        m_entries = new Entry[m_capacity];
+
+        for(int i = 0; i < m_size; ++i)
+        {
+            m_entries[i] = other.m_entries[i];
+        }
+    }
+    else
+    {
+        m_entries = 0;
+    }
+}
+
+// Assignment Operator
+template <class K, class V>
+Map<K, V>& Map<K, V>::operator=(const Map<K, V>& other)
+{
+    if(this != &other)
+    {
+        DeleteData();
+        CopyFrom(other);
+    }
+
+    return *this;
+}
+
+
+// ----------------------------------------------
+// Insert
+template <class K, class V>
+bool Map<K, V>::Insert(const K& key, const V& value)
+{
+    // Checks if the key already exists and stop insert if exist
+    if (Search(key))
+    {
+        return false;
+    }
+
+    // Checks if size is larger than half of capacity, if so expand first
+    if (m_size > m_capacity/2)
+    {
+        Resize();
+    }
+
+    m_entries[m_size].key = key;
+    m_entries[m_size].value = value;
+    ++m_size;
+
+    return true;
+}
+
+// Resize when size exceeds limit
+template <class K, class V>
+void Map<K, V>::Resize()
+{
+    // Set new capacity to two times of what it initially was
+    Entry* tempArray = new Entry[m_capacity * 2];
+
+    // copy the data over to the temp array
+    for (int i = 0; i < m_size; ++i)
+    {
+        tempArray[i] = m_entries[i];
+    }
+
+    // delete the original map and set the map pointer to the new map
+    delete[] m_entries;
+    m_entries = tempArray;
+    tempArray = nullptr;
+
+    m_capacity = m_capacity * 2;
+}
+
+// Search if a key exists and returns it's index
+template <class K, class V>
+bool Map<K, V>::Search(const K& key) const
+{
+    /*for (int i = 0; i < m_size; ++i)
+    {
+        if (m_entries[i].key == i)
+        {
+            return true;
+        }
+    }
+
+    return false;*/
+
+    return SearchIndex(key) != -1;
+}
+
+
+// ----------------------------------------------
+// Replace value at an index
+template <class K, class V>
+bool Map<K, V>::ReplaceValue(const K& key, const V& value)
+{
+    int index = SearchIndex(key);
+
+    // checks if key exists, if not return false
+    if(index == -1)
+    {
+        return false;
+    }
+
+    m_entries[index].value = value;
+    return true;
+}
+
+// Helper function to get index, return -1 if it doesn't
+template <class K, class V>
+int Map<K, V>::SearchIndex(const K& key) const
+{
+    for(int i = 0; i < m_size; ++i)
+    {
+        if(m_entries[i].key == key)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+// ----------------------------------------------
+// Get the value from a key
+template <class K, class V>
+const V* Map<K, V>::GetValue(const K& key) const
+{
+    int index = SearchIndex(key);
+
+    if(index == -1)
+    {
+        return 0;
+    }
+
+    return &m_entries[index].value;
+}
+
+// Get the key at a particular index
+template <class K, class V>
+const K& Map<K, V>::GetKeyAt(int index) const
+{
+    //assert(index >= 0 && index < m_size);
+    return m_entries[index].key;
+}
+
+// Get the value at a particular index
+template <class K, class V>
+const V& Map<K, V>::GetValueAt(int index) const
+{
+    //assert(index >= 0 && index < m_size);
+    return m_entries[index].value;
+}
+
+
+// ----------------------------------------------
+// Delete the Map and free the memory
+template <class K, class V>
+void Map<K, V>::DeleteData()
+{
+    delete[] m_entries;
+    m_entries = 0;
+    m_size = 0;
+    m_capacity = 0;
+}
 #endif // MAP_H_INCLUDED

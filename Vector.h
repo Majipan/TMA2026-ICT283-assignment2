@@ -102,7 +102,7 @@ Vector<T>::Vector()
     m_size = 0;
     m_capacity = 8;
     m_vector = new T[m_capacity]; // request for memory on the heap
-    if(m_vector == nullptr)       // fail to allocate
+    if(m_vector == nullptr)       // fail to allocate memory
     {
         m_capacity = 0;
     }
@@ -115,11 +115,10 @@ Vector<T>::Vector(int n)
     m_size = n;
     m_capacity = n * 2;
     m_vector = new T[m_capacity]; // request for memory on the heap
-    if(m_vector == nullptr)       // fail to allocate
+    if(m_vector == nullptr)       // fail to allocate memory
     {
         m_capacity = 0;
     }
-
 }
 
 // Destructor

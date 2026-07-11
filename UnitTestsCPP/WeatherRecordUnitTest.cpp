@@ -1,4 +1,4 @@
-#include "WeatherRecord.h"
+#include "../WeatherRecord.h"
 #include <iostream>
 
 using namespace std;
