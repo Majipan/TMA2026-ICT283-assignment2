@@ -118,3 +118,30 @@ void WeatherRecord::SetSoRad(float sorad)
     m_sorad = sorad;
     m_hasSoRad = true;
 }
+
+
+// ----------------------------------------------
+// Returns YYYYMMDDHHMM
+long long WeatherRecord::GetDateTimeKey() const
+{
+    long long key = m_date.GetYear();
+
+    key = key * 100 + m_date.GetMonth();
+    key = key * 100 + m_date.GetDay();
+    key = key * 100 + m_time.GetHour();
+    key = key * 100 + m_time.GetMinute();
+
+    return key;
+}
+
+
+bool WeatherRecord::operator<(const WeatherRecord& other) const
+{
+    return GetDateTimeKey() < other.GetDateTimeKey();
+}
+
+
+bool WeatherRecord::operator==(const WeatherRecord& other) const
+{
+    return GetDateTimeKey() == other.GetDateTimeKey();
+}

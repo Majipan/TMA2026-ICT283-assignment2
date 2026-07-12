@@ -156,7 +156,7 @@ Map<K, V>::Map()
 template <class K, class V>
 Map<K, V>::Map(int n)
 {
-    m_size = n;
+    m_size = 0;
     m_capacity = n * 2;
     m_entries = new Entry[m_capacity];  // request for memory on the heap
     if (m_entries == nullptr)            // fail to allocate memory

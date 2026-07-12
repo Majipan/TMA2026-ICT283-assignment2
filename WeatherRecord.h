@@ -139,6 +139,27 @@ public:
      */
     void SetSoRad(float sorad);
 
+    /**
+     * @brief   To help compare between records used for sorting
+     * @param   other - other weather record
+     * @return  return true if this record is larger than the other
+     */
+    bool operator<(const WeatherRecord& other) const;
+
+    /**
+     * @brief   To help compare between records used for sorting
+     * @param   other - other weather record
+     * @return  return true if this record the same as the other
+     */
+    bool operator==(const WeatherRecord& other) const;
+
+    /**
+     * @brief   To help compare between records used for sorting
+     * @param   other - other weather record
+     * @return  return YYYYMMDDHHMM (202603310930)
+     */
+    long long GetDateTimeKey() const;
+
 
 private:
     /// Date class to store a single date in int
