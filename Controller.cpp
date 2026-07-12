@@ -297,6 +297,36 @@ bool Controller::TryParseFloat(const string& value, float& number)
 }
 
 // ----------------------------------------------
+// Remove duplicates from Vector
+void Controller::RemoveDuplicateRecords(WeatherData& records) const
+{
+    if(records.Size() <= 1)
+    {
+        return;
+    }
+
+    int writeIndex = 1;
+
+    for(int readIndex = 1; readIndex < records.Size(); ++readIndex)
+    {
+        if(!(records[readIndex] == records[writeIndex - 1]))
+        {
+            if(writeIndex != readIndex)
+            {
+                records[writeIndex] = records[readIndex];
+            }
+
+            ++writeIndex;
+        }
+    }
+
+    while(records.Size() > writeIndex)
+    {
+        records.Delete(records.Size() - 1);
+    }
+}
+
+// ----------------------------------------------
 // Main method to process the request from View
 MenuResult Controller::ProcessRequest(const MenuRequest& request)
 {

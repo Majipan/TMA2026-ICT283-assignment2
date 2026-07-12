@@ -72,6 +72,13 @@ public:
     T& operator[] (const int& index);
 
     /**
+     * @brief   Assignment operator
+     * @param   other - the other vector
+     * @return  this vector
+     */
+    Vector<T>& operator=(const Vector<T>& other);
+
+    /**
      * @brief   Getter for m_size member variable
      * @return  int
      */
@@ -146,6 +153,28 @@ Vector<T>::Vector(const Vector& other)
     {
         m_vector[i] = other.m_vector[i];
     }
+}
+
+// Assignment operator
+template <class T>
+Vector<T>& Vector<T>::operator=(const Vector<T>& other)
+{
+    if(this != &other)
+    {
+        delete[] m_vector;
+
+        m_size = other.m_size;
+        m_capacity = other.m_capacity;
+
+        m_vector = new T[m_capacity];
+
+        for(int i = 0; i < m_size; ++i)
+        {
+            m_vector[i] = other.m_vector[i];
+        }
+    }
+
+    return *this;
 }
 
 

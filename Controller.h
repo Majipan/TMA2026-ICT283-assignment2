@@ -108,6 +108,16 @@ private:
         int& minute);
 
     /**
+     * @brief   Removes duplicate weather records from a sorted WeatherData vector
+     *
+     * The records must already be sorted by date-time. Duplicate records are
+     * identified using WeatherRecord::operator==, which compares the date-time key
+     *
+     * @param   records The sorted weather records to remove duplicates from
+     */
+    void RemoveDuplicateRecords(WeatherData& records) const;
+
+    /**
      * @brief   Main method to process a request from the user input
      * @param   request - Struct for the request
      * @return  MenuResult - Result from the user input

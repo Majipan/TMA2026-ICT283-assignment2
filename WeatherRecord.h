@@ -155,7 +155,6 @@ public:
 
     /**
      * @brief   To help compare between records used for sorting
-     * @param   other - other weather record
      * @return  return YYYYMMDDHHMM (202603310930)
      */
     long long GetDateTimeKey() const;
