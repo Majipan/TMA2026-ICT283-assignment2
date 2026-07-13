@@ -7,6 +7,8 @@
 #include <string>
 #include "View.h"
 #include "Vector.h"
+#include "Bst.h"
+#include "Map.h"
 #include "WeatherRecord.h"
 
 //---------------------------------------------------------------------------------
@@ -14,6 +16,9 @@
 typedef Vector<WeatherRecord> WeatherData;
 typedef float (WeatherRecord::*WeatherGetter)() const;
 typedef bool (WeatherRecord::*WeatherValidGetter)() const;
+typedef int YearMonthKey;
+typedef Bst<WeatherRecord> WeatherTree;
+typedef Map<YearMonthKey, WeatherTree> WeatherTreeMap;
 
 //---------------------------------------------------------------------------------
 
@@ -42,6 +47,8 @@ public:
 private:
     /// Collection of weather records loaded from the data file
     WeatherData m_weatherData;
+    /// Map that stores one balanced BST for each year-month key
+    WeatherTreeMap m_weatherTrees;
     /// MVC; Console for input and output
     View m_view;
 
@@ -108,14 +115,69 @@ private:
         int& minute);
 
     /**
+     * @brief   A single record to be inserted into the map
+     * @param   key - YYYYMM
+     * @param   records - WeatherData class for a single weather record
+     */
+    struct MonthBucket
+    {
+        YearMonthKey key;
+        WeatherData records;
+    };
+
+    /**
+     * @brief   Creates a year-month key in YYYYMM format
+     * @param   year The record year
+     * @param   month The record month
+     * @return  Integer key in YYYYMM format
+     */
+    YearMonthKey CreateYearMonthKey(int year, int month) const;
+
+    /**
+     * @brief   Finds the index of a month bucket
+     * @param   buckets - a collection of month buckets
+     * @param   key - the year-month key to find
+     * @return  Index of the bucket if found, otherwise -1
+     */
+    int FindMonthBucketIndex(const Vector<MonthBucket>& buckets,
+                             YearMonthKey key) const;
+
+    /**
+     * @brief   Adds a weather record into the correct temporary month bucket
+     * @param   buckets The temporary month buckets
+     * @param   record The weather record to add
+     */
+    void AddRecordToMonthBucket(Vector<MonthBucket>& buckets,
+                                const WeatherRecord& record) const;
+
+    /**
      * @brief   Removes duplicate weather records from a sorted WeatherData vector
-     *
-     * The records must already be sorted by date-time. Duplicate records are
-     * identified using WeatherRecord::operator==, which compares the date-time key
-     *
-     * @param   records The sorted weather records to remove duplicates from
+     * @param   records The sorted weather records
      */
     void RemoveDuplicateRecords(WeatherData& records) const;
+
+    /**
+     * @brief   Builds all balanced monthly BSTs and stores them in the Map
+     */
+    void BuildWeatherTrees();
+
+    /**
+     * @brief   Inserts sorted records into a BST in balanced order
+     * @param   records The sorted unique records
+     * @param   left Left index
+     * @param   right Right index
+     * @param   tree The BST being built
+     */
+    void BalancedInsert(const WeatherData& records,
+                        int left,
+                        int right,
+                        WeatherTree& tree) const;
+
+    /**
+     * @param   output Output stream
+     * @brief   Temporary test to check that records were inserted into Map and BST
+     */
+    void TestWeatherTreeMap(ostream& output) const;
 
     /**
      * @brief   Main method to process a request from the user input

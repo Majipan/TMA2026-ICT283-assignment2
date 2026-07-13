@@ -2,8 +2,12 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
+
 #include "Controller.h"
 #include "Vector.h"
+#include "Bst.h"
+#include "Map.h"
+#include "MergeSort.h"
 
 using namespace std;
 
@@ -27,6 +31,9 @@ void Controller::Run(istream& input, ostream& output)
     stringstream message;
     message << "Loaded records: " << m_weatherData.Size();
     m_view.ShowMessage(output, message.str());
+
+    BuildWeatherTrees();
+    TestWeatherTreeMap(output);
 
     // Menu operations
     int option = 0;
@@ -297,9 +304,64 @@ bool Controller::TryParseFloat(const string& value, float& number)
 }
 
 // ----------------------------------------------
+// Generate an int for the year-month key to be used on the map
+YearMonthKey Controller::CreateYearMonthKey(int year, int month) const
+{
+    return year * 100 + month;
+}
+
+// ----------------------------------------------
+// Find the index based on the key in the bucket listing
+int Controller::FindMonthBucketIndex(const Vector<MonthBucket>& buckets, YearMonthKey key) const
+{
+    for(int i = 0; i < buckets.Size(); ++i)
+    {
+        if(buckets[i].key == key)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+// ----------------------------------------------
+// Add a record to its correct bucket based on the year-month key
+/*
+Vector<MonthBucket>
+    [201503, Vector<WeatherRecord>]
+    [201504, Vector<WeatherRecord>]
+    [201505, Vector<WeatherRecord>]
+*/
+void Controller::AddRecordToMonthBucket(Vector<MonthBucket>& buckets, const WeatherRecord& record) const
+{
+    // get the year-month key for this record
+    YearMonthKey key = CreateYearMonthKey(record.GetYear(), record.GetMonth());
+
+    // look for the key in the bucket index listing
+    int index = FindMonthBucketIndex(buckets, key);
+
+    // if this key is not found, create a new bucket and add it to the bucket index listing
+    if(index == -1)
+    {
+        MonthBucket bucket;
+        bucket.key = key;
+        bucket.records.Insert(bucket.records.Size(), record);
+
+        buckets.Insert(buckets.Size(), bucket);
+    }
+    // if this key is found, add this record to the back of the vector
+    else
+    {
+        buckets[index].records.Insert(buckets[index].records.Size(), record);
+    }
+}
+
+// ----------------------------------------------
 // Remove duplicates from Vector
 void Controller::RemoveDuplicateRecords(WeatherData& records) const
 {
+    // Safety check for when vector has only 1 or less record
     if(records.Size() <= 1)
     {
         return;
@@ -307,6 +369,7 @@ void Controller::RemoveDuplicateRecords(WeatherData& records) const
 
     int writeIndex = 1;
 
+    // iterate through the vector to look for duplicates
     for(int readIndex = 1; readIndex < records.Size(); ++readIndex)
     {
         if(!(records[readIndex] == records[writeIndex - 1]))
@@ -325,6 +388,55 @@ void Controller::RemoveDuplicateRecords(WeatherData& records) const
         records.Delete(records.Size() - 1);
     }
 }
+
+// ----------------------------------------------
+// Insert into a BST record by record
+void Controller::BalancedInsert(const WeatherData& records,
+                                int left,
+                                int right,
+                                WeatherTree& tree) const
+{
+    if(left > right)
+    {
+        return;
+    }
+
+    int mid = left + (right - left) / 2;
+
+    tree.Insert(records[mid]);
+
+    BalancedInsert(records, left, mid - 1, tree);
+    BalancedInsert(records, mid + 1, right, tree);
+}
+
+// ----------------------------------------------
+// Main function form the dataset
+// temp month bucket  ->  sort  ->  remove duplicates  ->  create balance tree  ->  Map
+void Controller::BuildWeatherTrees()
+{
+    Vector<MonthBucket> buckets;
+
+    for(int i = 0; i < m_weatherData.Size(); ++i)
+    {
+        AddRecordToMonthBucket(buckets, m_weatherData[i]);
+    }
+
+    for(int i = 0; i < buckets.Size(); ++i)
+    {
+        MergeSort(buckets[i].records);
+        RemoveDuplicateRecords(buckets[i].records);
+
+        WeatherTree tree;
+
+        BalancedInsert(buckets[i].records,
+                       0,
+                       buckets[i].records.Size() - 1,
+                       tree);
+
+        m_weatherTrees.Insert(buckets[i].key, tree);
+    }
+}
+
 
 // ----------------------------------------------
 // Main method to process the request from View
@@ -667,4 +779,42 @@ float Controller::SolarRadiationTotal(WeatherData& data, int month, int year)
     }
 
     return total;
+}
+
+
+// ----------------------------------------------
+// TESTING PURPOSES ONLY
+void Controller::TestWeatherTreeMap(ostream& output) const
+{
+    output << endl << "-- BST/Map Load Test --" << endl;
+    output << "Number of year-month BSTs: " << m_weatherTrees.Size() << endl;
+
+    if(m_weatherData.Size() > 0)
+    {
+        YearMonthKey key = CreateYearMonthKey(m_weatherData[0].GetYear(),
+                                              m_weatherData[0].GetMonth());
+
+        const WeatherTree* tree = m_weatherTrees.GetValue(key);
+
+        if(tree != 0)
+        {
+            output << "First record year-month key: " << key << endl;
+            output << "First record found in BST: ";
+
+            if(tree->Search(m_weatherData[0]))
+            {
+                output << "true" << endl;
+            }
+            else
+            {
+                output << "false" << endl;
+            }
+        }
+        else
+        {
+            output << "Could not retrieve BST for first record." << endl;
+        }
+    }
+
+    output << "-- End BST/Map Load Test --" << endl << endl;
 }

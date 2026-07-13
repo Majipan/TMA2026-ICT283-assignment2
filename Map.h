@@ -224,6 +224,15 @@ Map<K, V>& Map<K, V>::operator=(const Map<K, V>& other)
 
 
 // ----------------------------------------------
+// Get the number of key-value pairs in the Map
+template <class K, class V>
+int Map<K, V>::Size() const
+{
+    return m_size;
+}
+
+
+// ----------------------------------------------
 // Insert
 template <class K, class V>
 bool Map<K, V>::Insert(const K& key, const V& value)
