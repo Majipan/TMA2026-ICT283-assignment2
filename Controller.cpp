@@ -33,7 +33,7 @@ void Controller::Run(istream& input, ostream& output)
     m_view.ShowMessage(output, message.str());
 
     BuildWeatherTrees();
-    TestWeatherTreeMap(output);
+    //TestWeatherTreeMap(output);         // <!> DEBUG - Show records loaded into BST
 
     // Menu operations
     int option = 0;
@@ -437,6 +437,30 @@ void Controller::BuildWeatherTrees()
     }
 }
 
+// ----------------------------------------------
+// Gets records from the Map/BST structure for one month of one year
+bool Controller::GetWeatherDataForMonth(int year, int month, WeatherData& records) const
+{
+    YearMonthKey key = CreateYearMonthKey(year, month);         // Get the key for the specified year and month
+    const WeatherTree* tree = m_weatherTrees.GetValue(key);     // Save all the data from BST for that year and month
+
+    // Safety check, empty the vector
+    records.Clear();
+
+    // If there are no records for that year and month, return false
+    if(tree == 0)
+    {
+        return false;
+    }
+
+    // If there records, store them in the reference vector
+    tree->ToVector(records);
+
+    // Return status
+    return records.Size() > 0;
+}
+
+
 
 // ----------------------------------------------
 // Main method to process the request from View
@@ -475,28 +499,35 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
         int year = request.date.year;
         int index = month - 1;
 
-        int windCount = CountValidRecords(
-                            m_weatherData,
-                            &WeatherRecord::HasWindSpeed,
-                            month,
-                            year);
+        WeatherData monthData;
 
-        if(windCount > 0)
+        if(GetWeatherDataForMonth(year, month, monthData))
         {
-            result.months[index].hasWind = true;
+            int windCount = CountValidRecords(
+                                monthData,
+                                &WeatherRecord::HasWindSpeed,
+                                month,
+                                year);
 
-            result.months[index].windAverage = Average(
-                                                   m_weatherData,
-                                                   &WeatherRecord::GetWindSpeed,
-                                                   &WeatherRecord::HasWindSpeed,
-                                                   month, year);
+            if(windCount > 0)
+            {
+                result.months[index].hasWind = true;
 
-            result.months[index].windStdDev = StdDev(
-                                                  m_weatherData,
-                                                  &WeatherRecord::GetWindSpeed,
-                                                  &WeatherRecord::HasWindSpeed,
-                                                  result.months[index].windAverage,
-                                                  month, year);
+                result.months[index].windAverage = Average(
+                                                       monthData,
+                                                       &WeatherRecord::GetWindSpeed,
+                                                       &WeatherRecord::HasWindSpeed,
+                                                       month,
+                                                       year);
+
+                result.months[index].windStdDev = StdDev(
+                                                      monthData,
+                                                      &WeatherRecord::GetWindSpeed,
+                                                      &WeatherRecord::HasWindSpeed,
+                                                      result.months[index].windAverage,
+                                                      month,
+                                                      year);
+            }
         }
     }
     else if(request.option == 2)
@@ -506,29 +537,35 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
         for(int month = 1; month <= 12; ++month)
         {
             int index = month - 1;
+            WeatherData monthData;
 
-            int tempCount = CountValidRecords(
-                                m_weatherData,
-                                &WeatherRecord::HasAATemp,
-                                month,
-                                year);
-
-            if(tempCount > 0)
+            if(GetWeatherDataForMonth(year, month, monthData))
             {
-                result.months[index].hasTemp = true;
+                int tempCount = CountValidRecords(
+                                    monthData,
+                                    &WeatherRecord::HasAATemp,
+                                    month,
+                                    year);
 
-                result.months[index].tempAverage = Average(
-                                                       m_weatherData,
-                                                       &WeatherRecord::GetAATemp,
-                                                       &WeatherRecord::HasAATemp,
-                                                       month, year);
+                if(tempCount > 0)
+                {
+                    result.months[index].hasTemp = true;
 
-                result.months[index].tempStdDev = StdDev(
-                                                      m_weatherData,
-                                                      &WeatherRecord::GetAATemp,
-                                                      &WeatherRecord::HasAATemp,
-                                                      result.months[index].tempAverage,
-                                                      month, year);
+                    result.months[index].tempAverage = Average(
+                                                           monthData,
+                                                           &WeatherRecord::GetAATemp,
+                                                           &WeatherRecord::HasAATemp,
+                                                           month,
+                                                           year);
+
+                    result.months[index].tempStdDev = StdDev(
+                                                          monthData,
+                                                          &WeatherRecord::GetAATemp,
+                                                          &WeatherRecord::HasAATemp,
+                                                          result.months[index].tempAverage,
+                                                          month,
+                                                          year);
+                }
             }
         }
     }
@@ -566,72 +603,76 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
         for(int month = 1; month <= 12; ++month)
         {
             int index = month - 1;
+            WeatherData monthData;
 
-            int windCount = CountValidRecords(
-                                m_weatherData,
-                                &WeatherRecord::HasWindSpeed,
-                                month,
-                                year);
-
-            if(windCount > 0)
+            if(GetWeatherDataForMonth(year, month, monthData))
             {
-                result.months[index].hasWind = true;
+                int windCount = CountValidRecords(
+                                    monthData,
+                                    &WeatherRecord::HasWindSpeed,
+                                    month,
+                                    year);
 
-                result.months[index].windAverage = Average(
-                                                       m_weatherData,
-                                                       &WeatherRecord::GetWindSpeed,
-                                                       &WeatherRecord::HasWindSpeed,
-                                                       month,
-                                                       year);
+                if(windCount > 0)
+                {
+                    result.months[index].hasWind = true;
 
-                result.months[index].windStdDev = StdDev(
-                                                      m_weatherData,
-                                                      &WeatherRecord::GetWindSpeed,
-                                                      &WeatherRecord::HasWindSpeed,
-                                                      result.months[index].windAverage,
-                                                      month,
-                                                      year);
-            }
+                    result.months[index].windAverage = Average(
+                                                           monthData,
+                                                           &WeatherRecord::GetWindSpeed,
+                                                           &WeatherRecord::HasWindSpeed,
+                                                           month,
+                                                           year);
 
-            int tempCount = CountValidRecords(
-                                m_weatherData,
-                                &WeatherRecord::HasAATemp,
-                                month,
-                                year);
+                    result.months[index].windStdDev = StdDev(
+                                                          monthData,
+                                                          &WeatherRecord::GetWindSpeed,
+                                                          &WeatherRecord::HasWindSpeed,
+                                                          result.months[index].windAverage,
+                                                          month,
+                                                          year);
+                }
 
-            if(tempCount > 0)
-            {
-                result.months[index].hasTemp = true;
+                int tempCount = CountValidRecords(
+                                    monthData,
+                                    &WeatherRecord::HasAATemp,
+                                    month,
+                                    year);
 
-                result.months[index].tempAverage = Average(
-                                                       m_weatherData,
-                                                       &WeatherRecord::GetAATemp,
-                                                       &WeatherRecord::HasAATemp,
-                                                       month,
-                                                       year);
+                if(tempCount > 0)
+                {
+                    result.months[index].hasTemp = true;
 
-                result.months[index].tempStdDev = StdDev(
-                                                      m_weatherData,
-                                                      &WeatherRecord::GetAATemp,
-                                                      &WeatherRecord::HasAATemp,
-                                                      result.months[index].tempAverage,
-                                                      month,
-                                                      year);
-            }
+                    result.months[index].tempAverage = Average(
+                                                           monthData,
+                                                           &WeatherRecord::GetAATemp,
+                                                           &WeatherRecord::HasAATemp,
+                                                           month,
+                                                           year);
 
-            int solarCount = CountValidSolarRecords(
-                                 m_weatherData,
-                                 month,
-                                 year);
+                    result.months[index].tempStdDev = StdDev(
+                                                          monthData,
+                                                          &WeatherRecord::GetAATemp,
+                                                          &WeatherRecord::HasAATemp,
+                                                          result.months[index].tempAverage,
+                                                          month,
+                                                          year);
+                }
 
-            if(solarCount > 0)
-            {
-                result.months[index].hasSolar = true;
+                int solarCount = CountValidSolarRecords(
+                                     monthData,
+                                     month,
+                                     year);
 
-                result.months[index].solarTotal = SolarRadiationTotal(
-                                                      m_weatherData,
-                                                      month,
-                                                      year);
+                if(solarCount > 0)
+                {
+                    result.months[index].hasSolar = true;
+
+                    result.months[index].solarTotal = SolarRadiationTotal(
+                                                          monthData,
+                                                          month,
+                                                          year);
+                }
             }
         }
     }

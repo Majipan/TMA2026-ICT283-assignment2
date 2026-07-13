@@ -75,6 +75,12 @@ public:
     void PostOrder(VisitFunction visit) const;
 
     /**
+     * @brief   Copies the BST data into a Vector using in-order traversal
+     * @param   data - Vector used to store copied tree data
+     */
+    void ToVector(Vector<T>& data) const;
+
+    /**
      * @brief   Debug check for the BST representation invariant
      */
     bool IsValidBST() const;
@@ -141,6 +147,13 @@ private:
      * @param   out - for printing the traversal result
      */
     void PostOrder(Node* node, VisitFunction visit) const;
+
+    /**
+     * @brief   Copies a subtree into a Vector using in-order traversal
+     * @param   node - root of the subtree to copy
+     * @param   data - Vector used to store copied tree data
+     */
+    void ToVector(Node* node, Vector<T>& data) const;
 
     /**
      * @brief   Checks that the BST is ordered correctly
@@ -348,6 +361,26 @@ typename Bst<T>::Node* Bst<T>::Copy(Node* node) const
     newNode->rLink = Copy(node->rLink);
 
     return newNode;
+}
+
+
+// Copy tree data into a Vector in sorted order (Public)
+template <class T>
+void Bst<T>::ToVector(Vector<T>& data) const
+{
+    ToVector(m_root, data);
+}
+
+// Helper to Copy tree data into a Vector in sorted order (Private recursive)
+template <class T>
+void Bst<T>::ToVector(Node* node, Vector<T>& data) const
+{
+    if(node != nullptr)
+    {
+        ToVector(node->lLink, data);
+        data.Insert(data.Size(), node->data);
+        ToVector(node->rLink, data);
+    }
 }
 
 

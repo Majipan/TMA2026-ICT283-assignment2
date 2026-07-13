@@ -174,6 +174,15 @@ private:
                         WeatherTree& tree) const;
 
     /**
+     * @brief   Gets all records for a specified year and month from the map/BST structure
+     * @param   year - requested year
+     * @param   month - requested month
+     * @param   records - Vector used to store copied records from the BST
+     * @return  true if a matching BST exists and records were copied
+     */
+    bool GetWeatherDataForMonth(int year, int month, WeatherData& records) const;
+
+    /**
      * @param   output Output stream
      * @brief   Temporary test to check that records were inserted into Map and BST
      */
