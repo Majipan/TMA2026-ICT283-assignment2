@@ -246,6 +246,47 @@ private:
      * @return  float - total solar radiation
      */
     float SolarRadiationTotal(WeatherData& data, int month, int year);
+
+    /**
+     * @brief   Gets all records for a selected month across all loaded years
+     * @param   month - The selected month number
+     * @param   records - Vector used to store copied records
+     */
+    void GetWeatherDataForMonthAllYears(int month, WeatherData& records) const;
+
+    /**
+     * @brief   Checks whether a value is valid for sPCC calculation
+     * @param   record - Weather record to check
+     * @param   getter - Getter for the selected value
+     * @param   validGetter - Getter for checking whether the value exists
+     * @param   isSolar - True if the value is solar radiation
+     * @return  true if the value can be used
+     */
+    bool IsValidSPCCValue(const WeatherRecord& record,
+                          WeatherGetter getter,
+                          WeatherValidGetter validGetter,
+                          bool isSolar) const;
+
+    /**
+     * @brief   Calculates the sample Pearson Correlation Coefficient
+     * @param   records - Weather records to process
+     * @param   xGetter - Getter for first data field
+     * @param   xValid - Getter for first data field validity
+     * @param   xIsSolar - True if first field is solar radiation
+     * @param   yGetter - Getter for second data field
+     * @param   yValid - Getter for second data field validity
+     * @param   yIsSolar - True if second field is solar radiation
+     * @param   result - Stores the calculated sPCC value
+     * @return  true if sPCC could be calculated
+     */
+    bool CalculateSPCC(const WeatherData& records,
+                       WeatherGetter xGetter,
+                       WeatherValidGetter xValid,
+                       bool xIsSolar,
+                       WeatherGetter yGetter,
+                       WeatherValidGetter yValid,
+                       bool yIsSolar,
+                       double& result) const;
 };
 
 #endif // CONTROLLER_H_INCLUDED

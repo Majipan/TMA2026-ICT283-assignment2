@@ -470,6 +470,15 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
     result.option = request.option;
     result.month = request.date.month;
     result.year = request.date.year;
+
+    result.hasST = false;
+    result.hasSR = false;
+    result.hasTR = false;
+
+    result.spccST = 0.0;
+    result.spccSR = 0.0;
+    result.spccTR = 0.0;
+
     result.validOption = true;
 
 
@@ -573,26 +582,42 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
     // ---------------------------------------------------------------------------------------
     else if(request.option == 3)
     {
-        int year = request.date.year;
+        int month = request.date.month;
 
-        for(int month = 1; month <= 12; ++month)
-        {
-            int index = month - 1;
+        WeatherData monthData;
+        GetWeatherDataForMonthAllYears(month, monthData);
 
-            int solarCount = CountValidSolarRecords(
-                                 m_weatherData,
-                                 month,
-                                 year);
+        result.month = month;
 
-            if(solarCount > 0)
-            {
-                result.months[index].hasSolar = true;
+        result.hasST = CalculateSPCC(
+                           monthData,
+                           &WeatherRecord::GetWindSpeed,
+                           &WeatherRecord::HasWindSpeed,
+                           false,
+                           &WeatherRecord::GetAATemp,
+                           &WeatherRecord::HasAATemp,
+                           false,
+                           result.spccST);
 
-                result.months[index].solarTotal = SolarRadiationTotal(
-                                                      m_weatherData,
-                                                      month, year);
-            }
-        }
+        result.hasSR = CalculateSPCC(
+                           monthData,
+                           &WeatherRecord::GetWindSpeed,
+                           &WeatherRecord::HasWindSpeed,
+                           false,
+                           &WeatherRecord::GetSoRad,
+                           &WeatherRecord::HasSoRad,
+                           true,
+                           result.spccSR);
+
+        result.hasTR = CalculateSPCC(
+                           monthData,
+                           &WeatherRecord::GetAATemp,
+                           &WeatherRecord::HasAATemp,
+                           false,
+                           &WeatherRecord::GetSoRad,
+                           &WeatherRecord::HasSoRad,
+                           true,
+                           result.spccTR);
     }
 
     // ---------------------------------------------------------------------------------------
@@ -820,6 +845,106 @@ float Controller::SolarRadiationTotal(WeatherData& data, int month, int year)
     }
 
     return total;
+}
+
+// ----------------------------------------------
+// Helper method to get all WeatherData for a specific month across all the years
+void Controller::GetWeatherDataForMonthAllYears(int month, WeatherData& records) const
+{
+    // Safety check to empty the vector
+    records.Clear();
+
+    // Iterate across the entire map
+    for(int i = 0; i < m_weatherTrees.Size(); ++i)
+    {
+        // Get individual map record's key
+        YearMonthKey key = m_weatherTrees.GetKeyAt(i);
+
+        // Truncate the year and check only for month
+        if(key % 100 == month)
+        {
+            // Get the record and add it to a vector
+            const WeatherTree& tree = m_weatherTrees.GetValueAt(i);
+            tree.ToVector(records);
+        }
+    }
+}
+
+// ----------------------------------------------
+// Helper method to sift out invalid records
+bool Controller::IsValidSPCCValue(const WeatherRecord& record,
+                                  WeatherGetter getter,
+                                  WeatherValidGetter validGetter,
+                                  bool isSolar) const
+{
+    if(!(record.*validGetter)())
+    {
+        return false;
+    }
+
+    if(isSolar && (record.*getter)() < 100.0f)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+// ----------------------------------------------
+// Helper method to calculate SPCC
+bool Controller::CalculateSPCC(const WeatherData& records,
+                               WeatherGetter xGetter,
+                               WeatherValidGetter xValid,
+                               bool xIsSolar,
+                               WeatherGetter yGetter,
+                               WeatherValidGetter yValid,
+                               bool yIsSolar,
+                               double& result) const
+{
+    int count = 0;
+
+    double sumX = 0.0;
+    double sumY = 0.0;
+    double sumXY = 0.0;
+    double sumX2 = 0.0;
+    double sumY2 = 0.0;
+
+    for(int i = 0; i < records.Size(); ++i)
+    {
+        if(IsValidSPCCValue(records[i], xGetter, xValid, xIsSolar) &&
+           IsValidSPCCValue(records[i], yGetter, yValid, yIsSolar))
+        {
+            double x = (records[i].*xGetter)();
+            double y = (records[i].*yGetter)();
+
+            sumX += x;
+            sumY += y;
+            sumXY += x * y;
+            sumX2 += x * x;
+            sumY2 += y * y;
+
+            ++count;
+        }
+    }
+
+    if(count < 2)
+    {
+        return false;
+    }
+
+    double numerator = count * sumXY - sumX * sumY;
+
+    double denominatorLeft = count * sumX2 - sumX * sumX;
+    double denominatorRight = count * sumY2 - sumY * sumY;
+
+    if(denominatorLeft <= 0.0 || denominatorRight <= 0.0)
+    {
+        return false;
+    }
+
+    result = numerator / sqrt(denominatorLeft * denominatorRight);
+
+    return true;
 }
 
 

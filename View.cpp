@@ -9,19 +9,21 @@ View::View()
 
 }
 
+// ----------------------------------------------
 // Display the menu in console
 void View::ShowMenu(ostream& output) const
 {
-    output << endl;
+    output << endl << endl;
     output << "========== Weather Data Menu ==========" << endl;
-    output << "1. Average wind speed and sample standard deviation for a month/year" << endl;
-    output << "2. Average ambient air temperature and sample standard deviation for each month of a year" << endl;
-    output << "3. Total solar radiation for each month of a year" << endl;
-    output << "4. Output WindTempSolar.csv for a year" << endl;
-    output << "5. Exit" << endl;
+    output << "[1] Average wind speed and sample standard deviation for a month/year" << endl;
+    output << "[2] Average ambient air temperature and sample standard deviation for each month of a year" << endl;
+    output << "[3] Sample Pearson Correlation Coefficient for a month" << endl;
+    output << "[4] Output WindTempSolar.csv for a year" << endl;
+    output << "[5] Exit" << endl;
     output << "=======================================" << endl;
 }
 
+// ----------------------------------------------
 // Request for user input and filter
 MenuRequest View::GetMenuRequest(istream& input, ostream& output) const
 {
@@ -56,10 +58,8 @@ MenuRequest View::GetMenuRequest(istream& input, ostream& output) const
         }
     }
 
-    // option 2, 3, 4; if not out of bounds, ask for  month
-    if(request.option == 2 ||
-            request.option == 3 ||
-            request.option == 4)
+    // option 2 & 4; if not out of bounds, ask for year
+    else if(request.option == 2 || request.option == 4)
     {
         // Loop request for year input
         while(!ReadIntLine(input, output, "Enter year: ", request.date.year))
@@ -67,10 +67,22 @@ MenuRequest View::GetMenuRequest(istream& input, ostream& output) const
             output << "Invalid year. Please enter a valid year." << endl;
         }
     }
+    // option 3; if not out of bounds, ask for month
+    else if(request.option == 3)
+    {
+        // Loop request for month input
+        while(!ReadIntLine(input, output, "Enter month: ", request.date.month) ||
+                request.date.month < 1 ||
+                request.date.month > 12)
+        {
+            output << "Invalid month. Please enter a value from 1 to 12." << endl;
+        }
+    }
 
     return request;
 }
 
+// ----------------------------------------------
 // Show result of user's inputs and filters
 void View::ShowResult(ostream& output, const MenuResult& result) const
 {
@@ -91,7 +103,7 @@ void View::ShowResult(ostream& output, const MenuResult& result) const
     }
     else if(result.option == 3)
     {
-        ShowSolarYearResult(output, result);
+        ShowSPCCResult(output, result);
     }
     else if(result.option == 4)
     {
@@ -108,12 +120,14 @@ void View::ShowResult(ostream& output, const MenuResult& result) const
     }
 }
 
+// ----------------------------------------------
 // Generic show console message
 void View::ShowMessage(ostream& output, const string& message) const
 {
     output << message << endl;
 }
 
+// ----------------------------------------------
 // checks input to ensure it is an integer
 bool View::ReadIntLine(istream& input, ostream& output, const string& prompt, int& value) const
 {
@@ -141,6 +155,7 @@ bool View::ReadIntLine(istream& input, ostream& output, const string& prompt, in
     return true;
 }
 
+// ----------------------------------------------
 // helper method to convert month in int to string
 string View::MonthName(int month) const
 {
@@ -175,12 +190,13 @@ string View::MonthName(int month) const
     }
 }
 
+// ----------------------------------------------
 // Helper method for displaying Wind Result
 void View::ShowWindResult(ostream& output, const MenuResult& result) const
 {
     const MonthlyResult& monthResult = result.months[result.month - 1];
 
-    output << MonthName(result.month) << " " << result.year << ":" << endl;
+    output << endl << MonthName(result.month) << " " << result.year << ":" << endl;
 
     if(!monthResult.hasWind)
     {
@@ -192,10 +208,11 @@ void View::ShowWindResult(ostream& output, const MenuResult& result) const
     output << "Sample stdev: " << monthResult.windStdDev << endl;
 }
 
+// ----------------------------------------------
 // Helper method for displaying Ambient Air Temperature
 void View::ShowTemperatureYearResult(ostream& output, const MenuResult& result) const
 {
-    output << result.year << endl;
+    output << endl << result.year << endl;
 
     for(int i = 0; i < 12; ++i)
     {
@@ -205,7 +222,7 @@ void View::ShowTemperatureYearResult(ostream& output, const MenuResult& result) 
 
         if(!monthResult.hasTemp)
         {
-            output << "No Data" << endl;
+            output  << "No Data" << endl;
         }
         else
         {
@@ -218,10 +235,11 @@ void View::ShowTemperatureYearResult(ostream& output, const MenuResult& result) 
     }
 }
 
+// ----------------------------------------------
 // Helper method for displaying Solar Radiation
 void View::ShowSolarYearResult(ostream& output, const MenuResult& result) const
 {
-    output << result.year << endl;
+    output<< result.year << endl;
 
     for(int i = 0; i < 12; ++i)
     {
@@ -231,16 +249,53 @@ void View::ShowSolarYearResult(ostream& output, const MenuResult& result) const
 
         if(!monthResult.hasSolar)
         {
-            output << "No Data" << endl;
+            output << endl << "No Data" << endl;
         }
         else
         {
-            output << monthResult.solarTotal << " kWh/m2" << endl;
+            output << endl << monthResult.solarTotal << " kWh/m2" << endl;
         }
     }
 }
 
-// helper method to write into output file
+// ----------------------------------------------
+// Helper method to show SPCC result
+void View::ShowSPCCResult(ostream& output, const MenuResult& result) const
+{
+    output << endl
+           << "Sample Pearson Correlation Coefficient for "
+           << MonthName(result.month) << endl;
+
+    if(result.hasST)
+    {
+        output << "S_T: " << fixed << setprecision(2) << result.spccST << endl;
+    }
+    else
+    {
+        output << "S_T: No Data" << endl;
+    }
+
+    if(result.hasSR)
+    {
+        output << "S_R: " << fixed << setprecision(2) << result.spccSR << endl;
+    }
+    else
+    {
+        output << "S_R: No Data" << endl;
+    }
+
+    if(result.hasTR)
+    {
+        output << "T_R: " << fixed << setprecision(2) << result.spccTR << endl;
+    }
+    else
+    {
+        output << "T_R: No Data" << endl;
+    }
+}
+
+// ----------------------------------------------
+// Helper method to write into output file
 bool View::WriteWindTempSolarFile(const MenuResult& result, const string& filename) const
 {
     ofstream ofile(filename.c_str());

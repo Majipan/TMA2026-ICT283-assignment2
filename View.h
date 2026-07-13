@@ -48,6 +48,14 @@ struct MenuResult
 
     MonthlyResult months[12];
 
+    bool hasST;
+    bool hasSR;
+    bool hasTR;
+
+    double spccST;
+    double spccSR;
+    double spccTR;
+
     bool validOption;
 };
 
@@ -133,6 +141,13 @@ private:
      * @param   result - result from the controller class to be formatted
      */
     void ShowSolarYearResult(ostream& output, const MenuResult& result) const;
+
+    /**
+     * @brief   Helper method for displaying the SPCC result
+     * @param   output - The output stream
+     * @param   result - result from the controller class to be formatted
+     */
+    void ShowSPCCResult(ostream& output, const MenuResult& result) const;
 
     /**
      * @brief   Writes option 4 result to WindTempSolar.csv

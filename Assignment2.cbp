@@ -44,16 +44,33 @@
 		<Unit filename="Map.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="MapUnitTest.cpp" />
+		<Unit filename="MergeSort.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Time.cpp" />
 		<Unit filename="Time.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="UnitTestsCPP/DateUnitTest.cpp" />
-		<Unit filename="UnitTestsCPP/MapUnitTest.cpp" />
-		<Unit filename="UnitTestsCPP/TimeUnitTest.cpp" />
-		<Unit filename="UnitTestsCPP/VectorUnitTest.cpp" />
-		<Unit filename="UnitTestsCPP/WeatherRecordUnitTest.cpp" />
+		<Unit filename="UnitTestsCPP/DateUnitTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="UnitTestsCPP/MapUnitTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="UnitTestsCPP/TimeUnitTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="UnitTestsCPP/VectorUnitTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="UnitTestsCPP/WeatherRecordUnitTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="Vector.h" />
 		<Unit filename="View.cpp" />
 		<Unit filename="View.h">
@@ -63,10 +80,7 @@
 		<Unit filename="WeatherRecord.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="main.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
