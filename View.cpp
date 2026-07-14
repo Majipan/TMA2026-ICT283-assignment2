@@ -330,6 +330,8 @@ bool View::WriteWindTempSolarFile(const MenuResult& result, const string& filena
             ofile << monthResult.windAverage
                   << "("
                   << monthResult.windStdDev
+                  << ", "
+                  << monthResult.windMad
                   << ")";
         }
         else
@@ -344,6 +346,8 @@ bool View::WriteWindTempSolarFile(const MenuResult& result, const string& filena
             ofile << monthResult.tempAverage
                   << "("
                   << monthResult.tempStdDev
+                  << ", "
+                  << monthResult.tempMad
                   << ")";
         }
         else

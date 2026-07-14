@@ -491,10 +491,12 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
         result.months[i].hasWind = false;
         result.months[i].windAverage = 0;
         result.months[i].windStdDev = 0;
+        result.months[i].windMad = 0;
 
         result.months[i].hasTemp = false;
         result.months[i].tempAverage = 0;
         result.months[i].tempStdDev = 0;
+        result.months[i].tempMad = 0;
 
         result.months[i].hasSolar = false;
         result.months[i].solarTotal = 0;
@@ -643,19 +645,27 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
                     result.months[index].hasWind = true;
 
                     result.months[index].windAverage = Average(
-                                                           monthData,
-                                                           &WeatherRecord::GetWindSpeed,
-                                                           &WeatherRecord::HasWindSpeed,
-                                                           month,
-                                                           year);
+                                                        monthData,
+                                                        &WeatherRecord::GetWindSpeed,
+                                                        &WeatherRecord::HasWindSpeed,
+                                                        month,
+                                                        year);
 
                     result.months[index].windStdDev = StdDev(
-                                                          monthData,
-                                                          &WeatherRecord::GetWindSpeed,
-                                                          &WeatherRecord::HasWindSpeed,
-                                                          result.months[index].windAverage,
-                                                          month,
-                                                          year);
+                                                        monthData,
+                                                        &WeatherRecord::GetWindSpeed,
+                                                        &WeatherRecord::HasWindSpeed,
+                                                        result.months[index].windAverage,
+                                                        month,
+                                                        year);
+
+                    result.months[index].windMad = MeanAbsoluteDeviation(
+                                                        monthData,
+                                                        &WeatherRecord::GetWindSpeed,
+                                                        &WeatherRecord::HasWindSpeed,
+                                                        result.months[index].windAverage,
+                                                        month,
+                                                        year);
                 }
 
                 int tempCount = CountValidRecords(
@@ -669,19 +679,27 @@ MenuResult Controller::ProcessRequest(const MenuRequest& request)
                     result.months[index].hasTemp = true;
 
                     result.months[index].tempAverage = Average(
-                                                           monthData,
-                                                           &WeatherRecord::GetAATemp,
-                                                           &WeatherRecord::HasAATemp,
-                                                           month,
-                                                           year);
+                                                        monthData,
+                                                        &WeatherRecord::GetAATemp,
+                                                        &WeatherRecord::HasAATemp,
+                                                        month,
+                                                        year);
 
                     result.months[index].tempStdDev = StdDev(
-                                                          monthData,
-                                                          &WeatherRecord::GetAATemp,
-                                                          &WeatherRecord::HasAATemp,
-                                                          result.months[index].tempAverage,
-                                                          month,
-                                                          year);
+                                                        monthData,
+                                                        &WeatherRecord::GetAATemp,
+                                                        &WeatherRecord::HasAATemp,
+                                                        result.months[index].tempAverage,
+                                                        month,
+                                                        year);
+
+                    result.months[index].tempMad = MeanAbsoluteDeviation(
+                                                        monthData,
+                                                        &WeatherRecord::GetAATemp,
+                                                        &WeatherRecord::HasAATemp,
+                                                        result.months[index].tempAverage,
+                                                        month,
+                                                        year);
                 }
 
                 int solarCount = CountValidSolarRecords(
@@ -825,6 +843,38 @@ float Controller::StdDev(WeatherData& data,
     }
 
     return sqrt(sum / (count - 1));
+}
+
+// ----------------------------------------------
+// Helper method to calculate mean absolute deviation
+float Controller::MeanAbsoluteDeviation(WeatherData& data,
+                                        WeatherGetter getter,
+                                        WeatherValidGetter validGetter,
+                                        float mean,
+                                        int month,
+                                        int year)
+{
+    int count = CountValidRecords(data, validGetter, month, year);
+
+    if(count == 0)
+    {
+        return 0;
+    }
+
+    float sum = 0;
+
+    for(int i = 0; i < data.Size(); ++i)
+    {
+        if(data[i].GetMonth() == month &&
+                data[i].GetYear() == year &&
+                (data[i].*validGetter)())
+        {
+            float value = (data[i].*getter)();
+            sum += fabs(value - mean);
+        }
+    }
+
+    return sum / count;
 }
 
 // ----------------------------------------------

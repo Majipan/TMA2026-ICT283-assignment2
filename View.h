@@ -31,10 +31,12 @@ struct MonthlyResult
     bool hasWind;
     float windAverage;
     float windStdDev;
+    float windMad;
 
     bool hasTemp;
     float tempAverage;
     float tempStdDev;
+    float tempMad;
 
     bool hasSolar;
     float solarTotal;

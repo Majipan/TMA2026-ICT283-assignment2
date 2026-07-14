@@ -239,6 +239,23 @@ private:
     float StdDev(WeatherData& data, WeatherGetter getter, WeatherValidGetter validGetter, float mean, int month, int year);
 
     /**
+     * @brief   Helper method to calculate the mean absolute deviation of a column in WeatherRecord
+     * @param   data - reference of WeatherData
+     * @param   getter - pointer to a Getter function
+     * @param   validGetter - pointer to a validity checker function
+     * @param   mean - average of a column in WeatherRecord
+     * @param   month - chosen month
+     * @param   year - chosen year
+     * @return  float - Mean Absolute Deviation
+     */
+    float MeanAbsoluteDeviation(WeatherData& data,
+                                WeatherGetter getter,
+                                WeatherValidGetter validGetter,
+                                float mean,
+                                int month,
+                                int year);
+
+    /**
      * @brief   Helper method to find the total Solar Radiation in WeatherRecord
      * @param   data - reference of m_weatherData
      * @param   month - month chosen to lookup
