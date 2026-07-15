@@ -71,8 +71,8 @@ void MergeSort(Vector<T>& data, T* temp, int left, int right)
     {
         int mid = left + (right - left) / 2;        // Find the middle index
 
-        MergeSort(data, temp, left, mid);           // Left half
-        MergeSort(data, temp, mid + 1, right);      // Right half
+        MergeSort(data, temp, left, mid);           // Left half until single element (recursive)
+        MergeSort(data, temp, mid + 1, right);      // Right half until single element (recursive)
 
         Merge(data, temp, left, mid, right);        // Merge two halves together (Sorting portion)
     }

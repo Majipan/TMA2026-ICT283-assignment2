@@ -161,7 +161,7 @@ bool Controller::Load(string source)
             }
             else
             {
-                // skip this faulty record
+                // skip this faulty record when WAST is not valid
             }
 
         }
@@ -358,7 +358,7 @@ void Controller::AddRecordToMonthBucket(Vector<MonthBucket>& buckets, const Weat
 }
 
 // ----------------------------------------------
-// Remove duplicates from Vector
+// Remove duplicates from Vector from a sorted vector
 void Controller::RemoveDuplicateRecords(WeatherData& records) const
 {
     // Safety check for when vector has only 1 or less record
@@ -367,22 +367,27 @@ void Controller::RemoveDuplicateRecords(WeatherData& records) const
         return;
     }
 
+    // tracks the last unique record
     int writeIndex = 1;
 
     // iterate through the vector to look for duplicates
     for(int readIndex = 1; readIndex < records.Size(); ++readIndex)
     {
+        // compares current record with last unique record and skip if duplicate
         if(!(records[readIndex] == records[writeIndex - 1]))
         {
+            // if there are already records skipped, write new unique record into last available slot
             if(writeIndex != readIndex)
             {
                 records[writeIndex] = records[readIndex];
             }
 
+            // move unique boundary forward
             ++writeIndex;
         }
     }
 
+    // purge excess records
     while(records.Size() > writeIndex)
     {
         records.Delete(records.Size() - 1);
@@ -405,8 +410,8 @@ void Controller::BalancedInsert(const WeatherData& records,
 
     tree.Insert(records[mid]);
 
-    BalancedInsert(records, left, mid - 1, tree);
-    BalancedInsert(records, mid + 1, right, tree);
+    BalancedInsert(records, left, mid - 1, tree);       // recursively insert left subtree
+    BalancedInsert(records, mid + 1, right, tree);      // recursively insert right subtree
 }
 
 // ----------------------------------------------
@@ -414,25 +419,28 @@ void Controller::BalancedInsert(const WeatherData& records,
 // temp month bucket  ->  sort  ->  remove duplicates  ->  create balance tree  ->  Map
 void Controller::BuildWeatherTrees()
 {
+    // temp vector to store monthly records
     Vector<MonthBucket> buckets;
 
+    // add single record to the month bucket
     for(int i = 0; i < m_weatherData.Size(); ++i)
     {
         AddRecordToMonthBucket(buckets, m_weatherData[i]);
     }
 
+    // sort the records, then remove duplicates
     for(int i = 0; i < buckets.Size(); ++i)
     {
         MergeSort(buckets[i].records);
         RemoveDuplicateRecords(buckets[i].records);
 
+        // create the Bst
         WeatherTree tree;
 
-        BalancedInsert(buckets[i].records,
-                       0,
-                       buckets[i].records.Size() - 1,
-                       tree);
+        // balance insertion
+        BalancedInsert(buckets[i].records, 0, buckets[i].records.Size() - 1, tree);
 
+        // insert into map
         m_weatherTrees.Insert(buckets[i].key, tree);
     }
 }
