@@ -375,6 +375,7 @@ void Bst<T>::ToVector(Vector<T>& data) const
 template <class T>
 void Bst<T>::ToVector(Node* node, Vector<T>& data) const
 {
+    // <!> Possible to use in-order traversal instead
     if(node != nullptr)
     {
         ToVector(node->lLink, data);

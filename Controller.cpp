@@ -450,8 +450,7 @@ void Controller::BuildWeatherTrees()
 bool Controller::GetWeatherDataForMonth(int year, int month, WeatherData& records) const
 {
     YearMonthKey key = CreateYearMonthKey(year, month);         // Get the key for the specified year and month
-    const WeatherTree* tree = m_weatherTrees.GetValue(key);     // Save all the data from BST for that year and month
-
+    const WeatherTree* tree = m_weatherTrees.GetValue(key);     // Extract BST from the map
     // Safety check, empty the vector
     records.Clear();
 
