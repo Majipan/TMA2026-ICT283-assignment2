@@ -138,11 +138,11 @@ private:
     void ShowTemperatureYearResult(ostream& output, const MenuResult& result) const;
 
     /**
-     * @brief   Helper method for displaying Solar Radiation
+     * @brief   Helper method for displaying Solar Radiation (deprecated)
      * @param   output - The output stream
      * @param   result - result from the controller class to be formatted
      */
-    void ShowSolarYearResult(ostream& output, const MenuResult& result) const;
+    //void ShowSolarYearResult(ostream& output, const MenuResult& result) const;
 
     /**
      * @brief   Helper method for displaying the SPCC result

@@ -52,14 +52,6 @@ using namespace std;
     bool Insert(const K& key, const V& value);
 
     /**
-     * @brief   Replaces the value for an existing key
-     * @param   key - the key for a single map record
-     * @param   value - the value for a single map record to replace the existing value based on the key
-     * @return  true if replaced, false if key does not exist
-     */
-    bool ReplaceValue(const K& key, const V& value);
-
-    /**
      * @brief   Search a map record
      * @param   key - key to a single map record
      * @return  true if found, false if not found
@@ -152,14 +144,14 @@ Map<K, V>::Map()
     }
 }
 
-// Constructor overload
+// Parameterised Constructor
 template <class K, class V>
 Map<K, V>::Map(int n)
 {
     m_size = 0;
     m_capacity = n * 2;
     m_entries = new Entry[m_capacity];  // request for memory on the heap
-    if (m_entries == nullptr)            // fail to allocate memory
+    if (m_entries == nullptr)           // fail to allocate memory
     {
         m_capacity = 0;
     }
@@ -294,23 +286,6 @@ bool Map<K, V>::Search(const K& key) const
     return SearchIndex(key) != -1;
 }
 
-
-// ----------------------------------------------
-// Replace value at an index
-template <class K, class V>
-bool Map<K, V>::ReplaceValue(const K& key, const V& value)
-{
-    int index = SearchIndex(key);
-
-    // checks if key exists, if not return false
-    if(index == -1)
-    {
-        return false;
-    }
-
-    m_entries[index].value = value;
-    return true;
-}
 
 // Helper function to get index, return -1 if it doesn't
 template <class K, class V>

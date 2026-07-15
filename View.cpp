@@ -236,8 +236,8 @@ void View::ShowTemperatureYearResult(ostream& output, const MenuResult& result) 
 }
 
 // ----------------------------------------------
-// Helper method for displaying Solar Radiation
-void View::ShowSolarYearResult(ostream& output, const MenuResult& result) const
+// Helper method for displaying Solar Radiation (Deprecated)
+/*void View::ShowSolarYearResult(ostream& output, const MenuResult& result) const
 {
     output<< result.year << endl;
 
@@ -256,7 +256,7 @@ void View::ShowSolarYearResult(ostream& output, const MenuResult& result) const
             output << endl << monthResult.solarTotal << " kWh/m2" << endl;
         }
     }
-}
+}*/
 
 // ----------------------------------------------
 // Helper method to show SPCC result
@@ -266,6 +266,7 @@ void View::ShowSPCCResult(ostream& output, const MenuResult& result) const
            << "Sample Pearson Correlation Coefficient for "
            << MonthName(result.month) << endl;
 
+    // std::fixed tells the stream that setprecision only applies after the decimal
     if(result.hasST)
     {
         output << "S_T: " << fixed << setprecision(2) << result.spccST << endl;
