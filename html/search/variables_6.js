@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tempaverage_226',['tempAverage',['../structMonthlyResult.html#a64890bad87455f3d217aa8f1c62ea81e',1,'MonthlyResult']]],
-  ['tempstddev_227',['tempStdDev',['../structMonthlyResult.html#a4bc95c75cb8f43d23c298726fecb7693',1,'MonthlyResult']]]
+  ['records_350',['records',['../structController_1_1MonthBucket.html#a07f89df6674992ac63594185467072fa',1,'Controller::MonthBucket']]],
+  ['rlink_351',['rLink',['../structBst_1_1Node.html#a63ce24234731fcad059821a55b2ae7de',1,'Bst::Node']]]
 ];

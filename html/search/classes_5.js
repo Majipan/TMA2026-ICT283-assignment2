@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weatherrecord_124',['WeatherRecord',['../classWeatherRecord.html',1,'']]]
+  ['node_192',['Node',['../structBst_1_1Node.html',1,'Bst']]]
 ];

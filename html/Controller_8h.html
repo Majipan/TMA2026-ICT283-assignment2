@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 1: Controller.h File Reference</title>
+<title>Assignment 2: Controller.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment 1
+   <div id="projectname">Assignment 2
    </div>
   </td>
  </tr>
@@ -92,20 +92,24 @@ $(document).ready(function(){initNavTree('Controller_8h.html',''); initResizable
 <code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="View_8h_source.html">View.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vector_8h_source.html">Vector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Bst_8h_source.html">Bst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Map_8h_source.html">Map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="WeatherRecord_8h_source.html">WeatherRecord.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Controller.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Controller_8h__incl.png" border="0" usemap="#Controller_8h" alt=""/></div>
 <map name="Controller_8h" id="Controller_8h">
-<area shape="rect" title=" " alt="" coords="42,5,130,32"/>
-<area shape="rect" title=" " alt="" coords="133,229,205,256"/>
-<area shape="rect" title=" " alt="" coords="28,155,83,181"/>
-<area shape="rect" href="View_8h.html" title=" " alt="" coords="56,80,117,107"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="142,80,212,107"/>
-<area shape="rect" href="WeatherRecord_8h.html" title=" " alt="" coords="237,80,360,107"/>
-<area shape="rect" href="Date_8h.html" title=" " alt="" coords="176,155,236,181"/>
-<area shape="rect" href="Time_8h.html" title=" " alt="" coords="264,155,325,181"/>
+<area shape="rect" title=" " alt="" coords="135,5,223,32"/>
+<area shape="rect" title=" " alt="" coords="223,229,295,256"/>
+<area shape="rect" title=" " alt="" coords="34,155,89,181"/>
+<area shape="rect" href="View_8h.html" title=" " alt="" coords="57,80,119,107"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="143,80,214,107"/>
+<area shape="rect" href="Bst_8h.html" title=" " alt="" coords="239,80,292,107"/>
+<area shape="rect" href="Map_8h.html" title=" " alt="" coords="229,155,288,181"/>
+<area shape="rect" href="WeatherRecord_8h.html" title=" " alt="" coords="367,80,489,107"/>
+<area shape="rect" href="Date_8h.html" title=" " alt="" coords="313,155,373,181"/>
+<area shape="rect" href="Time_8h.html" title=" " alt="" coords="397,155,459,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -126,6 +130,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html">Controller</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classController.html" title="Controller for the application.">Controller</a> for the application.  <a href="classController.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structController_1_1MonthBucket.html">Controller::MonthBucket</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single record to be inserted into the map.  <a href="structController_1_1MonthBucket.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -135,6 +142,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a58c0540636552cf4495c998803c74d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c7db04afafa8781cd51c5b29c6d5596"><td class="memItemLeft" align="right" valign="top">typedef bool(WeatherRecord::*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a>) () const</td></tr>
 <tr class="separator:a6c7db04afafa8781cd51c5b29c6d5596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa12aa21fbd2d865008c23a5d904d5d90"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a></td></tr>
+<tr class="separator:aa12aa21fbd2d865008c23a5d904d5d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec267ceec27f096e3c07be920933910"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classBst.html">Bst</a>&lt; <a class="el" href="classWeatherRecord.html">WeatherRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a></td></tr>
+<tr class="separator:a9ec267ceec27f096e3c07be920933910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1ecd5f888ca0a55a8d8dad7fc9292e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classMap.html">Map</a>&lt; <a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a>, <a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controller_8h.html#a9f1ecd5f888ca0a55a8d8dad7fc9292e">WeatherTreeMap</a></td></tr>
+<tr class="separator:a9f1ecd5f888ca0a55a8d8dad7fc9292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a5aa98a00ba9c1ee4e05b0884f5809817"></a>
@@ -149,7 +162,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00014">14</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00016">16</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
 </div>
 </div>
@@ -165,7 +178,39 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00015">15</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00017">17</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ec267ceec27f096e3c07be920933910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec267ceec27f096e3c07be920933910">&#9670;&nbsp;</a></span>WeatherTree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classBst.html">Bst</a>&lt;<a class="el" href="classWeatherRecord.html">WeatherRecord</a>&gt; <a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00020">20</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+
+</div>
+</div>
+<a id="a9f1ecd5f888ca0a55a8d8dad7fc9292e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1ecd5f888ca0a55a8d8dad7fc9292e">&#9670;&nbsp;</a></span>WeatherTreeMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classMap.html">Map</a>&lt;<a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a>, <a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a>&gt; <a class="el" href="Controller_8h.html#a9f1ecd5f888ca0a55a8d8dad7fc9292e">WeatherTreeMap</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00021">21</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
 </div>
 </div>
@@ -181,7 +226,23 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00016">16</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00018">18</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+
+</div>
+</div>
+<a id="aa12aa21fbd2d865008c23a5d904d5d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12aa21fbd2d865008c23a5d904d5d90">&#9670;&nbsp;</a></span>YearMonthKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00019">19</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
 </div>
 </div>

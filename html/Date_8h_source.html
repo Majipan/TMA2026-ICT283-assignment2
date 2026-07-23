@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 1: Date.h Source File</title>
+<title>Assignment 2: Date.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment 1
+   <div id="projectname">Assignment 2
    </div>
   </td>
  </tr>
@@ -114,23 +114,29 @@ $(document).ready(function(){initNavTree('Date_8h_source.html',''); initResizabl
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDate.html#af5f11c3b3da93d9640dda2bc33f6a7b5">SetDay</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> day);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">   70</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">m_year</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classDate.html#af9a4448036e166ed707289b799e811b5">   72</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#af9a4448036e166ed707289b799e811b5">m_month</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">   74</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">m_day</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // DATE_H_INCLUDED</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDate.html#a56469dbfb6a0c32326330796cb316881">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classDate.html">Date</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">   76</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">m_year</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classDate.html#af9a4448036e166ed707289b799e811b5">   78</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#af9a4448036e166ed707289b799e811b5">m_month</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">   80</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">m_day</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;std::ostream&amp; <a class="code" href="Date_8h.html#a1862604492a841a6b98e1a3061d95b96">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classDate.html">Date</a>&amp; date);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif // DATE_H_INCLUDED</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aDate_8h_html_a1862604492a841a6b98e1a3061d95b96"><div class="ttname"><a href="Date_8h.html#a1862604492a841a6b98e1a3061d95b96">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Date &amp;date)</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00072">Date.cpp:72</a></div></div>
 <div class="ttc" id="aclassDate_html_ad79ce504482f317ddcfdc4ecad77671f"><div class="ttname"><a href="classDate.html#ad79ce504482f317ddcfdc4ecad77671f">Date::GetYear</a></div><div class="ttdeci">int GetYear() const</div><div class="ttdoc">Retrieves the Year this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00018">Date.cpp:18</a></div></div>
 <div class="ttc" id="aclassDate_html_a4e59ed4ba66eec61c27460c5d09fa1bd"><div class="ttname"><a href="classDate.html#a4e59ed4ba66eec61c27460c5d09fa1bd">Date::Date</a></div><div class="ttdeci">Date()</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00003">Date.cpp:3</a></div></div>
-<div class="ttc" id="aclassDate_html_ab9fd21b8d92ec90a5ef2e2b5526809c5"><div class="ttname"><a href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">Date::m_year</a></div><div class="ttdeci">int m_year</div><div class="ttdoc">Year when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00070">Date.h:70</a></div></div>
-<div class="ttc" id="aclassDate_html_a248829578b8cd0ceeaf6a6e91f776e98"><div class="ttname"><a href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">Date::m_day</a></div><div class="ttdeci">int m_day</div><div class="ttdoc">Day when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00074">Date.h:74</a></div></div>
-<div class="ttc" id="aclassDate_html_af9a4448036e166ed707289b799e811b5"><div class="ttname"><a href="classDate.html#af9a4448036e166ed707289b799e811b5">Date::m_month</a></div><div class="ttdeci">int m_month</div><div class="ttdoc">Month when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00072">Date.h:72</a></div></div>
+<div class="ttc" id="aclassDate_html_ab9fd21b8d92ec90a5ef2e2b5526809c5"><div class="ttname"><a href="classDate.html#ab9fd21b8d92ec90a5ef2e2b5526809c5">Date::m_year</a></div><div class="ttdeci">int m_year</div><div class="ttdoc">Year when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00076">Date.h:76</a></div></div>
+<div class="ttc" id="aclassDate_html_a248829578b8cd0ceeaf6a6e91f776e98"><div class="ttname"><a href="classDate.html#a248829578b8cd0ceeaf6a6e91f776e98">Date::m_day</a></div><div class="ttdeci">int m_day</div><div class="ttdoc">Day when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00080">Date.h:80</a></div></div>
+<div class="ttc" id="aclassDate_html_af9a4448036e166ed707289b799e811b5"><div class="ttname"><a href="classDate.html#af9a4448036e166ed707289b799e811b5">Date::m_month</a></div><div class="ttdeci">int m_month</div><div class="ttdoc">Month when the Unit was marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00078">Date.h:78</a></div></div>
 <div class="ttc" id="aclassDate_html_affeebea66d47aae107b87656aa039dc6"><div class="ttname"><a href="classDate.html#affeebea66d47aae107b87656aa039dc6">Date::SetYear</a></div><div class="ttdeci">void SetYear(const int year)</div><div class="ttdoc">Sets the Year this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00034">Date.cpp:34</a></div></div>
 <div class="ttc" id="aclassDate_html_af5f11c3b3da93d9640dda2bc33f6a7b5"><div class="ttname"><a href="classDate.html#af5f11c3b3da93d9640dda2bc33f6a7b5">Date::SetDay</a></div><div class="ttdeci">void SetDay(const int day)</div><div class="ttdoc">Sets the Day this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00044">Date.cpp:44</a></div></div>
 <div class="ttc" id="aclassDate_html_af2dcc6ce51dbb2bd798499a149bdffb7"><div class="ttname"><a href="classDate.html#af2dcc6ce51dbb2bd798499a149bdffb7">Date::GetMonth</a></div><div class="ttdeci">int GetMonth() const</div><div class="ttdoc">Retrieves the Month this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00023">Date.cpp:23</a></div></div>
+<div class="ttc" id="aclassDate_html_a56469dbfb6a0c32326330796cb316881"><div class="ttname"><a href="classDate.html#a56469dbfb6a0c32326330796cb316881">Date::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Date &amp;other) const</div><div class="ttdoc">Operator &lt; override to compare dates.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00049">Date.cpp:49</a></div></div>
 <div class="ttc" id="aclassDate_html_a2ba436213dbd723c7d23ac3039a3ec69"><div class="ttname"><a href="classDate.html#a2ba436213dbd723c7d23ac3039a3ec69">Date::SetMonth</a></div><div class="ttdeci">void SetMonth(const int month)</div><div class="ttdoc">Sets the Month this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00039">Date.cpp:39</a></div></div>
 <div class="ttc" id="aclassDate_html"><div class="ttname"><a href="classDate.html">Date</a></div><div class="ttdoc">Date class to store date information in a modular form.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8h_source.html#l00021">Date.h:21</a></div></div>
 <div class="ttc" id="aclassDate_html_a6304a67f1c13b239eb8e80ad68161e40"><div class="ttname"><a href="classDate.html#a6304a67f1c13b239eb8e80ad68161e40">Date::GetDay</a></div><div class="ttdeci">int GetDay() const</div><div class="ttdoc">Retrieves the Day this unit is marked.</div><div class="ttdef"><b>Definition:</b> <a href="Date_8cpp_source.html#l00028">Date.cpp:28</a></div></div>

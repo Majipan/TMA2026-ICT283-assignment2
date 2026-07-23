@@ -7,7 +7,7 @@ var classView =
     [ "ShowMenu", "classView.html#a0362a7c27087a1761ccae7f0038c7641", null ],
     [ "ShowMessage", "classView.html#a0797d42b102e9ccfa15bfbd64aa63f24", null ],
     [ "ShowResult", "classView.html#a34c8d172a82a1ce439fa44bc0e12e925", null ],
-    [ "ShowSolarYearResult", "classView.html#a1930197cc0a568c043d40b65cb5e95d3", null ],
+    [ "ShowSPCCResult", "classView.html#a4ab091767a89c41ccc5156c943cc4e5c", null ],
     [ "ShowTemperatureYearResult", "classView.html#ac996d4794f396150e5e2b5b92903a2b1", null ],
     [ "ShowWindResult", "classView.html#a11b7dfedd468e26d70c1c5565cc06a06", null ],
     [ "WriteWindTempSolarFile", "classView.html#acca0beac97511401c90812cf03830e8b", null ]

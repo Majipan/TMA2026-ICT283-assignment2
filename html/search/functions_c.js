@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['time_190',['Time',['../classTime.html#a4245e409c7347d1d671858962c2ca3b5',1,'Time::Time()'],['../classTime.html#ad41532fa9dca778133707905c27eddc9',1,'Time::Time(int h, int m)']]],
-  ['total_191',['Total',['../classController.html#a0723631c81200768682a9305ccaeda24',1,'Controller']]],
-  ['trim_192',['Trim',['../classController.html#af4f55135f953d677d7f7c40c565373f2',1,'Controller']]],
-  ['tryparsefloat_193',['TryParseFloat',['../classController.html#a9a04b599b0f95ad2f962a9dc188f1d03',1,'Controller']]]
+  ['postorder_275',['PostOrder',['../classBst.html#a06833f8b1cf728c46eda519d8d377505',1,'Bst::PostOrder(VisitFunction visit) const'],['../classBst.html#aeee534efb5920edc6e30d30c3757bc37',1,'Bst::PostOrder(Node *node, VisitFunction visit) const']]],
+  ['preorder_276',['PreOrder',['../classBst.html#a6932cc07383982c8c9a6f4903122bb49',1,'Bst::PreOrder(VisitFunction visit) const'],['../classBst.html#a5b3073eaa13f8b30d86c8863ab59d7d7',1,'Bst::PreOrder(Node *node, VisitFunction visit) const']]],
+  ['processrequest_277',['ProcessRequest',['../classController.html#abfa9a6d0fcf1affa04b178685508c217',1,'Controller']]]
 ];

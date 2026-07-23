@@ -6,7 +6,9 @@ var structMonthlyResult =
     [ "month", "structMonthlyResult.html#a6a47ff23dd5c3a7f72abfc3f6268af84", null ],
     [ "solarTotal", "structMonthlyResult.html#ae3b897935a2ce2852f9e1bdb002b30ed", null ],
     [ "tempAverage", "structMonthlyResult.html#a64890bad87455f3d217aa8f1c62ea81e", null ],
+    [ "tempMad", "structMonthlyResult.html#ad6c954bd11a0e46a0b33e59cf694952c", null ],
     [ "tempStdDev", "structMonthlyResult.html#a4bc95c75cb8f43d23c298726fecb7693", null ],
     [ "windAverage", "structMonthlyResult.html#afaa8cac694b24c8afe3be90611e36369", null ],
+    [ "windMad", "structMonthlyResult.html#add950056b99b57c4d188f18a81bbc8e8", null ],
     [ "windStdDev", "structMonthlyResult.html#a51fc5a7a325638ec7b4e94783860f339", null ]
 ];

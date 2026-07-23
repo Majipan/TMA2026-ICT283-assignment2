@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solartotal_225',['solarTotal',['../structMonthlyResult.html#ae3b897935a2ce2852f9e1bdb002b30ed',1,'MonthlyResult']]]
+  ['option_349',['option',['../structMenuRequest.html#a393d4309a24e30aa8eb63adc5e86a0bf',1,'MenuRequest::option()'],['../structMenuResult.html#a0b97207dc20ef13e93c42d1f4361ba6f',1,'MenuResult::option()']]]
 ];

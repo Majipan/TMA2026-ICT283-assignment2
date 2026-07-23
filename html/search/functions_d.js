@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['vector_194',['Vector',['../classVector.html#a39d6069675db4ecfc1ab81d440da759a',1,'Vector::Vector()'],['../classVector.html#acf7619af10ed5201835f5e8b4981c13a',1,'Vector::Vector(int n)'],['../classVector.html#a940f94b7c4a1c15a65a1ab6e13859dfe',1,'Vector::Vector(const Vector &amp;other)']]],
-  ['view_195',['View',['../classView.html#a44ad60a768422d3fa8fbd7576950080a',1,'View']]]
+  ['readintline_278',['ReadIntLine',['../classView.html#a63fe8d5a69c1cf1b9a6121795430b5c1',1,'View']]],
+  ['removeduplicaterecords_279',['RemoveDuplicateRecords',['../classController.html#afe30b5d1093c852fb6fa049d93d21068',1,'Controller']]],
+  ['resize_280',['Resize',['../classMap.html#a84cece050ec3b92a1ff72fedbeab749f',1,'Map']]],
+  ['run_281',['Run',['../classController.html#ae4d67ca8302e9510bcf7823fb47837a4',1,'Controller']]]
 ];

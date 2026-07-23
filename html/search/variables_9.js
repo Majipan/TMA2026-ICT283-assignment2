@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['year_231',['year',['../structMonthYear.html#ad4e6370d7c1cf25d35a4d0a102e26185',1,'MonthYear::year()'],['../structMenuResult.html#a2803adaee5d2daf0c13fa81c6ac92f5a',1,'MenuResult::year()']]]
+  ['validoption_359',['validOption',['../structMenuResult.html#a2d53bbe691cc721e136858a3ad8b8bce',1,'MenuResult']]],
+  ['value_360',['value',['../structMap_1_1Entry.html#a0fde42d3caa9598e7d238d509b1d06c1',1,'Map::Entry']]]
 ];

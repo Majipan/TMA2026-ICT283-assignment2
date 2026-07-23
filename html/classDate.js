@@ -5,6 +5,7 @@ var classDate =
     [ "GetDay", "classDate.html#a6304a67f1c13b239eb8e80ad68161e40", null ],
     [ "GetMonth", "classDate.html#af2dcc6ce51dbb2bd798499a149bdffb7", null ],
     [ "GetYear", "classDate.html#ad79ce504482f317ddcfdc4ecad77671f", null ],
+    [ "operator<", "classDate.html#a56469dbfb6a0c32326330796cb316881", null ],
     [ "SetDay", "classDate.html#af5f11c3b3da93d9640dda2bc33f6a7b5", null ],
     [ "SetMonth", "classDate.html#a2ba436213dbd723c7d23ac3039a3ec69", null ],
     [ "SetYear", "classDate.html#affeebea66d47aae107b87656aa039dc6", null ],

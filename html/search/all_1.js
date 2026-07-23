@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['clear_2',['Clear',['../classVector.html#a06640b5a57e692928364c727def3c5de',1,'Vector']]],
-  ['controller_3',['Controller',['../classController.html',1,'Controller'],['../classController.html#a95c56822d667e94b031451729ce069a9',1,'Controller::Controller()']]],
-  ['controller_2ecpp_4',['Controller.cpp',['../Controller_8cpp.html',1,'']]],
-  ['controller_2eh_5',['Controller.h',['../Controller_8h.html',1,'']]],
-  ['convertwast_6',['ConvertWast',['../classController.html#ad1ca30c0f7cc7bbfd1fda82929f812b5',1,'Controller']]],
-  ['countvalidrecords_7',['CountValidRecords',['../classController.html#aea1209f24dd5ed1f4910d355b5e3aa8e',1,'Controller']]],
-  ['countvalidsolarrecords_8',['CountValidSolarRecords',['../classController.html#ac84c8a1ce9eb71c2d339f36d3f092318',1,'Controller']]]
+  ['balancedinsert_2',['BalancedInsert',['../classController.html#ad605b07d92a8c1cc2ebc425bdbd2a5b3',1,'Controller']]],
+  ['bst_3',['Bst',['../classBst.html',1,'Bst&lt; T &gt;'],['../classBst.html#ac9124c96ba73bebfbe93a1179908292a',1,'Bst::Bst()'],['../classBst.html#a88ee5a0d32c474cf021cd081131b64fc',1,'Bst::Bst(const Bst&lt; T &gt; &amp;other)']]],
+  ['bst_2eh_4',['Bst.h',['../Bst_8h.html',1,'']]],
+  ['buildweathertrees_5',['BuildWeatherTrees',['../classController.html#ae86487432d055afa1ce1866c4fdc7f5f',1,'Controller']]]
 ];

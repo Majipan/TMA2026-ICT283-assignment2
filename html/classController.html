@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment 1: Controller Class Reference</title>
+<title>Assignment 2: Controller Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment 1
+   <div id="projectname">Assignment 2
    </div>
   </td>
  </tr>
@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('classController.html',''); initResizab
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -100,15 +101,23 @@ Collaboration diagram for Controller:</div>
 <div class="dyncontent">
 <div class="center"><img src="classController__coll__graph.png" border="0" usemap="#Controller_coll__map" alt="Collaboration graph"/></div>
 <map name="Controller_coll__map" id="Controller_coll__map">
-<area shape="rect" title="Controller for the application." alt="" coords="45,273,123,300"/>
-<area shape="rect" href="classView.html" title="View for the application." alt="" coords="5,184,56,211"/>
-<area shape="rect" href="classVector.html" title=" " alt="" coords="81,184,255,211"/>
-<area shape="rect" href="classWeatherRecord.html" title="Class to hold a single weather record." alt="" coords="112,95,224,121"/>
-<area shape="rect" href="classTime.html" title="Time class to store time information in a modular form." alt="" coords="104,5,155,32"/>
-<area shape="rect" href="classDate.html" title="Date class to store date information in a modular form." alt="" coords="183,5,233,32"/>
+<area shape="rect" title="Controller for the application." alt="" coords="116,288,193,315"/>
+<area shape="rect" href="classView.html" title="View for the application." alt="" coords="5,191,56,218"/>
+<area shape="rect" href="classMap.html" title=" " alt="" coords="80,184,229,225"/>
+<area shape="rect" href="structMap_1_1Entry.html" title="Struct for a single record." alt="" coords="87,95,223,121"/>
+<area shape="rect" href="classVector.html" title=" " alt="" coords="254,191,429,218"/>
+<area shape="rect" href="classWeatherRecord.html" title="Class to hold a single weather record." alt="" coords="285,95,397,121"/>
+<area shape="rect" href="classTime.html" title="Time class to store time information in a modular form." alt="" coords="276,5,327,32"/>
+<area shape="rect" href="classDate.html" title="Date class to store date information in a modular form." alt="" coords="355,5,405,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structController_1_1MonthBucket.html">MonthBucket</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single record to be inserted into the map.  <a href="structController_1_1MonthBucket.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a95c56822d667e94b031451729ce069a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a95c56822d667e94b031451729ce069a9">Controller</a> ()</td></tr>
@@ -118,9 +127,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ae8e3c8c051baa27ac6d4c55b88864534"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ae8e3c8c051baa27ac6d4c55b88864534">LoadSource</a> ()</td></tr>
-<tr class="memdesc:ae8e3c8c051baa27ac6d4c55b88864534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the <a class="el" href="data__source_8txt.html">data_source.txt</a> content to obtain the source directory to the data file.  <a href="classController.html#ae8e3c8c051baa27ac6d4c55b88864534">More...</a><br /></td></tr>
-<tr class="separator:ae8e3c8c051baa27ac6d4c55b88864534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accfd9a74f3fc921aec2a447352183268"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#accfd9a74f3fc921aec2a447352183268">LoadSources</a> ()</td></tr>
+<tr class="memdesc:accfd9a74f3fc921aec2a447352183268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all CSV files listed in <a class="el" href="data__source_8txt.html">data/data_source.txt</a>.  <a href="classController.html#accfd9a74f3fc921aec2a447352183268">More...</a><br /></td></tr>
+<tr class="separator:accfd9a74f3fc921aec2a447352183268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4d947bd9bfd0b3d6e6832a0a0ef397"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a9e4d947bd9bfd0b3d6e6832a0a0ef397">Load</a> (string source)</td></tr>
 <tr class="memdesc:a9e4d947bd9bfd0b3d6e6832a0a0ef397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the data file.  <a href="classController.html#a9e4d947bd9bfd0b3d6e6832a0a0ef397">More...</a><br /></td></tr>
 <tr class="separator:a9e4d947bd9bfd0b3d6e6832a0a0ef397"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +148,30 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ad1ca30c0f7cc7bbfd1fda82929f812b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ad1ca30c0f7cc7bbfd1fda82929f812b5">ConvertWast</a> (const string &amp;wast, int &amp;year, int &amp;month, int &amp;day, int &amp;hour, int &amp;minute)</td></tr>
 <tr class="memdesc:ad1ca30c0f7cc7bbfd1fda82929f812b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to extract the value from the data row.  <a href="classController.html#ad1ca30c0f7cc7bbfd1fda82929f812b5">More...</a><br /></td></tr>
 <tr class="separator:ad1ca30c0f7cc7bbfd1fda82929f812b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbfdd69e8c1d2f9fa7d6ccdbe67bd714"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#acbfdd69e8c1d2f9fa7d6ccdbe67bd714">CreateYearMonthKey</a> (int year, int month) const</td></tr>
+<tr class="memdesc:acbfdd69e8c1d2f9fa7d6ccdbe67bd714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a year-month key in YYYYMM format.  <a href="classController.html#acbfdd69e8c1d2f9fa7d6ccdbe67bd714">More...</a><br /></td></tr>
+<tr class="separator:acbfdd69e8c1d2f9fa7d6ccdbe67bd714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fceddb94eb5aedc9d90b8243f6d3d0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a8fceddb94eb5aedc9d90b8243f6d3d0b">FindMonthBucketIndex</a> (const <a class="el" href="classVector.html">Vector</a>&lt; <a class="el" href="structController_1_1MonthBucket.html">MonthBucket</a> &gt; &amp;buckets, <a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a> key) const</td></tr>
+<tr class="memdesc:a8fceddb94eb5aedc9d90b8243f6d3d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a month bucket.  <a href="classController.html#a8fceddb94eb5aedc9d90b8243f6d3d0b">More...</a><br /></td></tr>
+<tr class="separator:a8fceddb94eb5aedc9d90b8243f6d3d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9653711bb827fde46e8914bc05e6ca78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a9653711bb827fde46e8914bc05e6ca78">AddRecordToMonthBucket</a> (<a class="el" href="classVector.html">Vector</a>&lt; <a class="el" href="structController_1_1MonthBucket.html">MonthBucket</a> &gt; &amp;buckets, const <a class="el" href="classWeatherRecord.html">WeatherRecord</a> &amp;record) const</td></tr>
+<tr class="memdesc:a9653711bb827fde46e8914bc05e6ca78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a weather record into the correct temporary month bucket.  <a href="classController.html#a9653711bb827fde46e8914bc05e6ca78">More...</a><br /></td></tr>
+<tr class="separator:a9653711bb827fde46e8914bc05e6ca78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe30b5d1093c852fb6fa049d93d21068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#afe30b5d1093c852fb6fa049d93d21068">RemoveDuplicateRecords</a> (<a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;records) const</td></tr>
+<tr class="memdesc:afe30b5d1093c852fb6fa049d93d21068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes duplicate weather records from a sorted WeatherData vector.  <a href="classController.html#afe30b5d1093c852fb6fa049d93d21068">More...</a><br /></td></tr>
+<tr class="separator:afe30b5d1093c852fb6fa049d93d21068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86487432d055afa1ce1866c4fdc7f5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ae86487432d055afa1ce1866c4fdc7f5f">BuildWeatherTrees</a> ()</td></tr>
+<tr class="memdesc:ae86487432d055afa1ce1866c4fdc7f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds all balanced monthly BSTs and stores them in the <a class="el" href="classMap.html" title="Template Map.">Map</a>.  <a href="classController.html#ae86487432d055afa1ce1866c4fdc7f5f">More...</a><br /></td></tr>
+<tr class="separator:ae86487432d055afa1ce1866c4fdc7f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad605b07d92a8c1cc2ebc425bdbd2a5b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ad605b07d92a8c1cc2ebc425bdbd2a5b3">BalancedInsert</a> (const <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;records, int left, int right, <a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a> &amp;tree) const</td></tr>
+<tr class="memdesc:ad605b07d92a8c1cc2ebc425bdbd2a5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts sorted records into a BST in balanced order.  <a href="classController.html#ad605b07d92a8c1cc2ebc425bdbd2a5b3">More...</a><br /></td></tr>
+<tr class="separator:ad605b07d92a8c1cc2ebc425bdbd2a5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab006c58c885e9411b43a5e28eade92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a9ab006c58c885e9411b43a5e28eade92">GetWeatherDataForMonth</a> (int year, int month, <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;records) const</td></tr>
+<tr class="memdesc:a9ab006c58c885e9411b43a5e28eade92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all records for a specified year and month from the map/BST structure.  <a href="classController.html#a9ab006c58c885e9411b43a5e28eade92">More...</a><br /></td></tr>
+<tr class="separator:a9ab006c58c885e9411b43a5e28eade92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab170ee4763e9fc1529c7491202e042c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ab170ee4763e9fc1529c7491202e042c7">TestWeatherTreeMap</a> (ostream &amp;output) const</td></tr>
+<tr class="memdesc:ab170ee4763e9fc1529c7491202e042c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary test to check that records were inserted into <a class="el" href="classMap.html" title="Template Map.">Map</a> and BST.  <a href="classController.html#ab170ee4763e9fc1529c7491202e042c7">More...</a><br /></td></tr>
+<tr class="separator:ab170ee4763e9fc1529c7491202e042c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfa9a6d0fcf1affa04b178685508c217"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMenuResult.html">MenuResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#abfa9a6d0fcf1affa04b178685508c217">ProcessRequest</a> (const <a class="el" href="structMenuRequest.html">MenuRequest</a> &amp;request)</td></tr>
 <tr class="memdesc:abfa9a6d0fcf1affa04b178685508c217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main method to process a request from the user input.  <a href="classController.html#abfa9a6d0fcf1affa04b178685508c217">More...</a><br /></td></tr>
 <tr class="separator:abfa9a6d0fcf1affa04b178685508c217"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,15 +190,30 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a39f28469c36d8050b4b86330f4bae0ca"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a39f28469c36d8050b4b86330f4bae0ca">StdDev</a> (<a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;data, <a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a> getter, <a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a> validGetter, float mean, int month, int year)</td></tr>
 <tr class="memdesc:a39f28469c36d8050b4b86330f4bae0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to find the standard deviation of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a>.  <a href="classController.html#a39f28469c36d8050b4b86330f4bae0ca">More...</a><br /></td></tr>
 <tr class="separator:a39f28469c36d8050b4b86330f4bae0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe19822309b0a1a425ffc7e5e929236"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#aefe19822309b0a1a425ffc7e5e929236">MeanAbsoluteDeviation</a> (<a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;data, <a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a> getter, <a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a> validGetter, float mean, int month, int year)</td></tr>
+<tr class="memdesc:aefe19822309b0a1a425ffc7e5e929236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to calculate the mean absolute deviation of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a>.  <a href="classController.html#aefe19822309b0a1a425ffc7e5e929236">More...</a><br /></td></tr>
+<tr class="separator:aefe19822309b0a1a425ffc7e5e929236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70dc12cb7059655fb08554f52f80c23e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a70dc12cb7059655fb08554f52f80c23e">SolarRadiationTotal</a> (<a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;data, int month, int year)</td></tr>
 <tr class="memdesc:a70dc12cb7059655fb08554f52f80c23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to find the total Solar Radiation in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a>.  <a href="classController.html#a70dc12cb7059655fb08554f52f80c23e">More...</a><br /></td></tr>
 <tr class="separator:a70dc12cb7059655fb08554f52f80c23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd234125bd45feaf631d15a5f2ad1ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a6cd234125bd45feaf631d15a5f2ad1ad">GetWeatherDataForMonthAllYears</a> (int month, <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;records) const</td></tr>
+<tr class="memdesc:a6cd234125bd45feaf631d15a5f2ad1ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all records for a selected month across all loaded years.  <a href="classController.html#a6cd234125bd45feaf631d15a5f2ad1ad">More...</a><br /></td></tr>
+<tr class="separator:a6cd234125bd45feaf631d15a5f2ad1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff5736e4711c09d213319a23a5956ef1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#aff5736e4711c09d213319a23a5956ef1">IsValidSPCCValue</a> (const <a class="el" href="classWeatherRecord.html">WeatherRecord</a> &amp;record, <a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a> getter, <a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a> validGetter, bool isSolar) const</td></tr>
+<tr class="memdesc:aff5736e4711c09d213319a23a5956ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a value is valid for sPCC calculation.  <a href="classController.html#aff5736e4711c09d213319a23a5956ef1">More...</a><br /></td></tr>
+<tr class="separator:aff5736e4711c09d213319a23a5956ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb17fa72c068b62a9326f2ed306ad3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#aecb17fa72c068b62a9326f2ed306ad3b">CalculateSPCC</a> (const <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;records, <a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a> xGetter, <a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a> xValid, bool xIsSolar, <a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a> yGetter, <a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a> yValid, bool yIsSolar, double &amp;result) const</td></tr>
+<tr class="memdesc:aecb17fa72c068b62a9326f2ed306ad3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sample Pearson Correlation Coefficient.  <a href="classController.html#aecb17fa72c068b62a9326f2ed306ad3b">More...</a><br /></td></tr>
+<tr class="separator:aecb17fa72c068b62a9326f2ed306ad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a994be94d3854cebfa01a23f3f5615a84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a994be94d3854cebfa01a23f3f5615a84">m_weatherData</a></td></tr>
 <tr class="memdesc:a994be94d3854cebfa01a23f3f5615a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of weather records loaded from the data file.  <a href="classController.html#a994be94d3854cebfa01a23f3f5615a84">More...</a><br /></td></tr>
 <tr class="separator:a994be94d3854cebfa01a23f3f5615a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c9ec7f63e1f33928816ba2c2fe8b80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Controller_8h.html#a9f1ecd5f888ca0a55a8d8dad7fc9292e">WeatherTreeMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a54c9ec7f63e1f33928816ba2c2fe8b80">m_weatherTrees</a></td></tr>
+<tr class="memdesc:a54c9ec7f63e1f33928816ba2c2fe8b80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMap.html" title="Template Map.">Map</a> that stores one balanced BST for each year-month key.  <a href="classController.html#a54c9ec7f63e1f33928816ba2c2fe8b80">More...</a><br /></td></tr>
+<tr class="separator:a54c9ec7f63e1f33928816ba2c2fe8b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a298400afefba97e14cf641725d957528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classView.html">View</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a298400afefba97e14cf641725d957528">m_view</a></td></tr>
 <tr class="memdesc:a298400afefba97e14cf641725d957528"><td class="mdescLeft">&#160;</td><td class="mdescRight">MVC; Console for input and output.  <a href="classController.html#a298400afefba97e14cf641725d957528">More...</a><br /></td></tr>
 <tr class="separator:a298400afefba97e14cf641725d957528"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,7 +224,7 @@ Private Attributes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>01 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/06/2026 Weihao Started </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00030">30</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00035">35</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95c56822d667e94b031451729ce069a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95c56822d667e94b031451729ce069a9">&#9670;&nbsp;</a></span>Controller()</h2>
@@ -193,11 +241,58 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00010">10</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00014">14</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9653711bb827fde46e8914bc05e6ca78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9653711bb827fde46e8914bc05e6ca78">&#9670;&nbsp;</a></span>AddRecordToMonthBucket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::AddRecordToMonthBucket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVector.html">Vector</a>&lt; <a class="el" href="structController_1_1MonthBucket.html">MonthBucket</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buckets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classWeatherRecord.html">WeatherRecord</a> &amp;&#160;</td>
+          <td class="paramname"><em>record</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a weather record into the correct temporary month bucket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buckets</td><td>The temporary month buckets </td></tr>
+    <tr><td class="paramname">record</td><td>The weather record to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00336">336</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a31f7fae98ceb5acf4a6d93a3560cb1da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31f7fae98ceb5acf4a6d93a3560cb1da">&#9670;&nbsp;</a></span>Average()</h2>
 
@@ -260,7 +355,187 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float - Average of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00567">567</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00807">807</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad605b07d92a8c1cc2ebc425bdbd2a5b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad605b07d92a8c1cc2ebc425bdbd2a5b3">&#9670;&nbsp;</a></span>BalancedInsert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::BalancedInsert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a9ec267ceec27f096e3c07be920933910">WeatherTree</a> &amp;&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts sorted records into a BST in balanced order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">records</td><td>The sorted unique records </td></tr>
+    <tr><td class="paramname">left</td><td>Left index </td></tr>
+    <tr><td class="paramname">right</td><td>Right index </td></tr>
+    <tr><td class="paramname">tree</td><td>The BST being built </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00399">399</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae86487432d055afa1ce1866c4fdc7f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86487432d055afa1ce1866c4fdc7f5f">&#9670;&nbsp;</a></span>BuildWeatherTrees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::BuildWeatherTrees </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Builds all balanced monthly BSTs and stores them in the <a class="el" href="classMap.html" title="Template Map.">Map</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00420">420</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aecb17fa72c068b62a9326f2ed306ad3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb17fa72c068b62a9326f2ed306ad3b">&#9670;&nbsp;</a></span>CalculateSPCC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Controller::CalculateSPCC </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a>&#160;</td>
+          <td class="paramname"><em>xGetter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a>&#160;</td>
+          <td class="paramname"><em>xValid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>xIsSolar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a>&#160;</td>
+          <td class="paramname"><em>yGetter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a>&#160;</td>
+          <td class="paramname"><em>yValid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>yIsSolar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the sample Pearson Correlation Coefficient. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">records</td><td>- Weather records to process </td></tr>
+    <tr><td class="paramname">xGetter</td><td>- Getter for first data field </td></tr>
+    <tr><td class="paramname">xValid</td><td>- Getter for first data field validity </td></tr>
+    <tr><td class="paramname">xIsSolar</td><td>- True if first field is solar radiation </td></tr>
+    <tr><td class="paramname">yGetter</td><td>- Getter for second data field </td></tr>
+    <tr><td class="paramname">yValid</td><td>- Getter for second data field validity </td></tr>
+    <tr><td class="paramname">yIsSolar</td><td>- True if second field is solar radiation </td></tr>
+    <tr><td class="paramname">result</td><td>- Stores the calculated sPCC value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if sPCC could be calculated </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00953">953</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +611,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool - success / fail </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00229">229</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00242">242</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +672,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int - Total valid counts </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00502">502</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00742">742</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -452,7 +727,103 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int - Total valid counts </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00523">523</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00763">763</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acbfdd69e8c1d2f9fa7d6ccdbe67bd714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbfdd69e8c1d2f9fa7d6ccdbe67bd714">&#9670;&nbsp;</a></span>CreateYearMonthKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a> Controller::CreateYearMonthKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a year-month key in YYYYMM format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The record year </td></tr>
+    <tr><td class="paramname">month</td><td>The record month </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Integer key in YYYYMM format </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00308">308</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8fceddb94eb5aedc9d90b8243f6d3d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fceddb94eb5aedc9d90b8243f6d3d0b">&#9670;&nbsp;</a></span>FindMonthBucketIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Controller::FindMonthBucketIndex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector.html">Vector</a>&lt; <a class="el" href="structController_1_1MonthBucket.html">MonthBucket</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buckets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#aa12aa21fbd2d865008c23a5d904d5d90">YearMonthKey</a>&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the index of a month bucket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buckets</td><td>- a collection of month buckets </td></tr>
+    <tr><td class="paramname">key</td><td>- the year-month key to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of the bucket if found, otherwise -1 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00315">315</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -500,7 +871,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int - column index </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00186">186</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00199">199</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -549,7 +920,171 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int - column index </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00209">209</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00222">222</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ab006c58c885e9411b43a5e28eade92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab006c58c885e9411b43a5e28eade92">&#9670;&nbsp;</a></span>GetWeatherDataForMonth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Controller::GetWeatherDataForMonth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all records for a specified year and month from the map/BST structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>- requested year </td></tr>
+    <tr><td class="paramname">month</td><td>- requested month </td></tr>
+    <tr><td class="paramname">records</td><td>- <a class="el" href="classVector.html" title="Dynamic Array.">Vector</a> used to store copied records from the BST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a matching BST exists and records were copied </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00450">450</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6cd234125bd45feaf631d15a5f2ad1ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd234125bd45feaf631d15a5f2ad1ad">&#9670;&nbsp;</a></span>GetWeatherDataForMonthAllYears()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::GetWeatherDataForMonthAllYears </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all records for a selected month across all loaded years. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>- The selected month number </td></tr>
+    <tr><td class="paramname">records</td><td>- <a class="el" href="classVector.html" title="Dynamic Array.">Vector</a> used to store copied records </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00910">910</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aff5736e4711c09d213319a23a5956ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff5736e4711c09d213319a23a5956ef1">&#9670;&nbsp;</a></span>IsValidSPCCValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Controller::IsValidSPCCValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classWeatherRecord.html">WeatherRecord</a> &amp;&#160;</td>
+          <td class="paramname"><em>record</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a>&#160;</td>
+          <td class="paramname"><em>getter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a>&#160;</td>
+          <td class="paramname"><em>validGetter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isSolar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether a value is valid for sPCC calculation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">record</td><td>- Weather record to check </td></tr>
+    <tr><td class="paramname">getter</td><td>- Getter for the selected value </td></tr>
+    <tr><td class="paramname">validGetter</td><td>- Getter for checking whether the value exists </td></tr>
+    <tr><td class="paramname">isSolar</td><td>- True if the value is solar radiation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the value can be used </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00933">933</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -585,12 +1120,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00084">84</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00097">97</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae8e3c8c051baa27ac6d4c55b88864534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8e3c8c051baa27ac6d4c55b88864534">&#9670;&nbsp;</a></span>LoadSource()</h2>
+<a id="accfd9a74f3fc921aec2a447352183268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accfd9a74f3fc921aec2a447352183268">&#9670;&nbsp;</a></span>LoadSources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +1134,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Controller::LoadSource </td>
+          <td class="memname">bool Controller::LoadSources </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -612,10 +1147,86 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Loads the <a class="el" href="data__source_8txt.html">data_source.txt</a> content to obtain the source directory to the data file. </p>
-<dl class="section return"><dt>Returns</dt><dd>string - directory to the csv data file </dd></dl>
+<p>Loads all CSV files listed in <a class="el" href="data__source_8txt.html">data/data_source.txt</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool - true if all listed files were loaded successfully </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00066">66</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00063">63</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aefe19822309b0a1a425ffc7e5e929236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe19822309b0a1a425ffc7e5e929236">&#9670;&nbsp;</a></span>MeanAbsoluteDeviation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Controller::MeanAbsoluteDeviation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a58c0540636552cf4495c998803c74d69">WeatherGetter</a>&#160;</td>
+          <td class="paramname"><em>getter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a6c7db04afafa8781cd51c5b29c6d5596">WeatherValidGetter</a>&#160;</td>
+          <td class="paramname"><em>validGetter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper method to calculate the mean absolute deviation of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>- reference of WeatherData </td></tr>
+    <tr><td class="paramname">getter</td><td>- pointer to a Getter function </td></tr>
+    <tr><td class="paramname">validGetter</td><td>- pointer to a validity checker function </td></tr>
+    <tr><td class="paramname">mean</td><td>- average of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a> </td></tr>
+    <tr><td class="paramname">month</td><td>- chosen month </td></tr>
+    <tr><td class="paramname">year</td><td>- chosen year </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float - Mean Absolute Deviation </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00858">858</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -652,7 +1263,43 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structMenuResult.html">MenuResult</a> - Result from the user input </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00295">295</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00475">475</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afe30b5d1093c852fb6fa049d93d21068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe30b5d1093c852fb6fa049d93d21068">&#9670;&nbsp;</a></span>RemoveDuplicateRecords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::RemoveDuplicateRecords </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Controller_8h.html#a5aa98a00ba9c1ee4e05b0884f5809817">WeatherData</a> &amp;&#160;</td>
+          <td class="paramname"><em>records</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes duplicate weather records from a sorted WeatherData vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">records</td><td>The sorted weather records </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00362">362</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -689,7 +1336,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00017">17</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00021">21</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -744,7 +1391,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float - total solar radiation </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00618">618</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00890">890</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -817,7 +1464,43 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float - Standard Deviation of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00585">585</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00825">825</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab170ee4763e9fc1529c7491202e042c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab170ee4763e9fc1529c7491202e042c7">&#9670;&nbsp;</a></span>TestWeatherTreeMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::TestWeatherTreeMap </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Temporary test to check that records were inserted into <a class="el" href="classMap.html" title="Template Map.">Map</a> and BST. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Output stream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l01011">1011</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -883,7 +1566,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float - Total of a column in <a class="el" href="classWeatherRecord.html" title="Class to hold a single weather record.">WeatherRecord</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00543">543</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00783">783</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -920,7 +1603,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string - trimmed value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00162">162</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00175">175</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -968,7 +1651,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool - pass/fail </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00261">261</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.html#l00274">274</a> of file <a class="el" href="Controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -995,7 +1678,7 @@ Private Attributes</h2></td></tr>
 
 <p>MVC; Console for input and output. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00046">46</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00053">53</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +1704,33 @@ Private Attributes</h2></td></tr>
 
 <p>Collection of weather records loaded from the data file. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00044">44</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00049">49</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+
+</div>
+</div>
+<a id="a54c9ec7f63e1f33928816ba2c2fe8b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c9ec7f63e1f33928816ba2c2fe8b80">&#9670;&nbsp;</a></span>m_weatherTrees</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Controller_8h.html#a9f1ecd5f888ca0a55a8d8dad7fc9292e">WeatherTreeMap</a> Controller::m_weatherTrees</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMap.html" title="Template Map.">Map</a> that stores one balanced BST for each year-month key. </p>
+
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00051">51</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
 </div>
 </div>

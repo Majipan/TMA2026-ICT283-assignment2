@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['windaverage_229',['windAverage',['../structMonthlyResult.html#afaa8cac694b24c8afe3be90611e36369',1,'MonthlyResult']]],
-  ['windstddev_230',['windStdDev',['../structMonthlyResult.html#a51fc5a7a325638ec7b4e94783860f339',1,'MonthlyResult']]]
+  ['tempaverage_356',['tempAverage',['../structMonthlyResult.html#a64890bad87455f3d217aa8f1c62ea81e',1,'MonthlyResult']]],
+  ['tempmad_357',['tempMad',['../structMonthlyResult.html#ad6c954bd11a0e46a0b33e59cf694952c',1,'MonthlyResult']]],
+  ['tempstddev_358',['tempStdDev',['../structMonthlyResult.html#a4bc95c75cb8f43d23c298726fecb7693',1,'MonthlyResult']]]
 ];

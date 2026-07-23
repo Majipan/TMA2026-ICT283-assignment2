@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['load_32',['Load',['../classController.html#a9e4d947bd9bfd0b3d6e6832a0a0ef397',1,'Controller']]],
-  ['loadsource_33',['LoadSource',['../classController.html#ae8e3c8c051baa27ac6d4c55b88864534',1,'Controller']]]
+  ['getaatemp_27',['GetAATemp',['../classWeatherRecord.html#af5ea2ffbcbf3a0c2ef2f90c0f112cf21',1,'WeatherRecord']]],
+  ['getcolumnindex_28',['GetColumnIndex',['../classController.html#a0765e95aed71ead7de3b8aa99534d0cb',1,'Controller']]],
+  ['getdatetimekey_29',['GetDateTimeKey',['../classWeatherRecord.html#a990629c54dc9785f0141450dc12bc131',1,'WeatherRecord']]],
+  ['getday_30',['GetDay',['../classDate.html#a6304a67f1c13b239eb8e80ad68161e40',1,'Date::GetDay()'],['../classWeatherRecord.html#ab7d2d2f815c513f2ebcb4d24c29cae8c',1,'WeatherRecord::GetDay()']]],
+  ['gethour_31',['GetHour',['../classTime.html#aaf65e0dc73514ffab9b3dd643cef9bdb',1,'Time::GetHour()'],['../classWeatherRecord.html#a9d7889b32da417199b638c91507fb631',1,'WeatherRecord::GetHour()']]],
+  ['getkeyat_32',['GetKeyAt',['../classMap.html#abd23e5730599d262256768138bc39461',1,'Map']]],
+  ['getlinerecord_33',['GetLineRecord',['../classController.html#ae911a463cac8c12856148a6f90040bda',1,'Controller']]],
+  ['getmenurequest_34',['GetMenuRequest',['../classView.html#a686058fac119c2959037909470c73c12',1,'View']]],
+  ['getminute_35',['GetMinute',['../classTime.html#a86302564cc0783b402dc5f0e137a43c1',1,'Time::GetMinute()'],['../classWeatherRecord.html#a37330b32e8f24f2b7cedfb546edda319',1,'WeatherRecord::GetMinute()']]],
+  ['getmonth_36',['GetMonth',['../classDate.html#af2dcc6ce51dbb2bd798499a149bdffb7',1,'Date::GetMonth()'],['../classWeatherRecord.html#ab795d5df15454d5f75e734b20c203651',1,'WeatherRecord::GetMonth()']]],
+  ['getsorad_37',['GetSoRad',['../classWeatherRecord.html#a9791091c7625abc73da09a47fb3f8f18',1,'WeatherRecord']]],
+  ['getvalue_38',['GetValue',['../classMap.html#ae5b2c7ab4f0ecb47d07f0cb61a8fe750',1,'Map']]],
+  ['getvalueat_39',['GetValueAt',['../classMap.html#a3dfe63853d57c1b883d641c3aa404805',1,'Map']]],
+  ['getweatherdataformonth_40',['GetWeatherDataForMonth',['../classController.html#a9ab006c58c885e9411b43a5e28eade92',1,'Controller']]],
+  ['getweatherdataformonthallyears_41',['GetWeatherDataForMonthAllYears',['../classController.html#a6cd234125bd45feaf631d15a5f2ad1ad',1,'Controller']]],
+  ['getwindspeed_42',['GetWindSpeed',['../classWeatherRecord.html#a010224ea85b7e69f94f19e9ac0b9bd9c',1,'WeatherRecord']]],
+  ['getyear_43',['GetYear',['../classDate.html#ad79ce504482f317ddcfdc4ecad77671f',1,'Date::GetYear()'],['../classWeatherRecord.html#a223b7ab0d1bad102d31138148d99c462',1,'WeatherRecord::GetYear()']]]
 ];

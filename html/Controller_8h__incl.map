@@ -1,10 +1,12 @@
 <map id="Controller.h" name="Controller.h">
-<area shape="rect" id="node1" title=" " alt="" coords="42,5,130,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="133,229,205,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="28,155,83,181"/>
-<area shape="rect" id="node4" href="$View_8h.html" title=" " alt="" coords="56,80,117,107"/>
-<area shape="rect" id="node5" href="$Vector_8h.html" title=" " alt="" coords="142,80,212,107"/>
-<area shape="rect" id="node6" href="$WeatherRecord_8h.html" title=" " alt="" coords="237,80,360,107"/>
-<area shape="rect" id="node7" href="$Date_8h.html" title=" " alt="" coords="176,155,236,181"/>
-<area shape="rect" id="node8" href="$Time_8h.html" title=" " alt="" coords="264,155,325,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="135,5,223,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="223,229,295,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="34,155,89,181"/>
+<area shape="rect" id="node4" href="$View_8h.html" title=" " alt="" coords="57,80,119,107"/>
+<area shape="rect" id="node5" href="$Vector_8h.html" title=" " alt="" coords="143,80,214,107"/>
+<area shape="rect" id="node6" href="$Bst_8h.html" title=" " alt="" coords="239,80,292,107"/>
+<area shape="rect" id="node7" href="$Map_8h.html" title=" " alt="" coords="229,155,288,181"/>
+<area shape="rect" id="node8" href="$WeatherRecord_8h.html" title=" " alt="" coords="367,80,489,107"/>
+<area shape="rect" id="node9" href="$Date_8h.html" title=" " alt="" coords="313,155,373,181"/>
+<area shape="rect" id="node10" href="$Time_8h.html" title=" " alt="" coords="397,155,459,181"/>
 </map>

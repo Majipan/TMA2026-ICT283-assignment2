@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insert_31',['Insert',['../classVector.html#a6c38e640cd0ea019aaf7c94f58fbf453',1,'Vector']]]
+  ['findmonthbucketindex_26',['FindMonthBucketIndex',['../classController.html#a8fceddb94eb5aedc9d90b8243f6d3d0b',1,'Controller']]]
 ];
